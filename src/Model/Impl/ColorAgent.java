@@ -9,11 +9,13 @@ public class ColorAgent implements Agent{
 	private Random rand = new Random();
 	private int posX,posY ;
 	private int maxX, maxY;
+	private boolean hasPayload ;
 	public ColorAgent(int maxX, int maxY) {
 		this.maxX= maxX;
 		this.maxY = maxY;
 		posX = rand.nextInt(maxX);
 		posY = rand.nextInt(maxY);
+		hasPayload = false;
 	}
 	
 	

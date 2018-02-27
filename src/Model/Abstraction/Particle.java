@@ -1,5 +1,7 @@
 package Model.Abstraction;
 
-public interface Particle<E> extends Comparable<E>{
-	E getProperties() ;
+import java.util.*;
+
+public interface Particle extends Comparable<Particle>{
+	List<?> getProperties() ;
 }
