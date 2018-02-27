@@ -7,16 +7,17 @@ import Model.Abstraction.*;
 public class ColorParticle implements Particle<List<Integer>>{
 
 	private int posX, posY ;
-	private Random rand = new Random();
+	private static Random rand = new Random();
 	private ArrayList<Integer> properties;
 	
 	public ColorParticle() {
-		posX = rand.nextInt(Core.getMaxX());
-		posY = rand.nextInt(Core.getMaxY());
-		properties = new ArrayList<>();
-		properties.add(rand.nextInt(256));
-		properties.add(rand.nextInt(256));
-		properties.add(rand.nextInt(256));
+		this(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+	}
+	
+	public ColorParticle(int r, int g, int b) {
+		posX = rand.nextInt(Core.getInstance().getMaxX());
+		posY = rand.nextInt(Core.getInstance().getMaxY());
+		properties = new ArrayList<>(Arrays.asList(r, g, b));
 	}
 
 	@Override
