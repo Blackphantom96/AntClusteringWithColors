@@ -3,6 +3,7 @@ package Model.Impl.Color;
 import java.util.*;
 
 import Model.Abstraction.*;
+import Model.Impl.CoreFactoryCreator;
 
 public class ColorAgent implements Agent {
 
@@ -12,8 +13,8 @@ public class ColorAgent implements Agent {
 	private ColorParticle particle;
 
 	public ColorAgent() {
-		this.maxX = Core.getInstance().getMaxX();
-		this.maxY = Core.getInstance().getMaxY();
+		this.maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
+		this.maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
 		posX = rand.nextInt(maxX);
 		posY = rand.nextInt(maxY);
 	}
