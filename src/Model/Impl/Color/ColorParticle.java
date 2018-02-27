@@ -4,16 +4,16 @@ import java.util.*;
 
 import Model.Abstraction.*;
 
-public class ColorParticle implements Particle<List<Integer>>{
+public class ColorParticle implements Particle<List<Integer>> {
 
-	private int posX, posY ;
+	private int posX, posY;
 	private static Random rand = new Random();
 	private ArrayList<Integer> properties;
-	
+
 	public ColorParticle() {
 		this(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
 	}
-	
+
 	public ColorParticle(int r, int g, int b) {
 		posX = rand.nextInt(Core.getInstance().getMaxX());
 		posY = rand.nextInt(Core.getInstance().getMaxY());
@@ -24,7 +24,7 @@ public class ColorParticle implements Particle<List<Integer>>{
 	public int getPosX() {
 		return posX;
 	}
-	
+
 	@Override
 	public int getPosY() {
 		return posY;
@@ -37,8 +37,8 @@ public class ColorParticle implements Particle<List<Integer>>{
 
 	@Override
 	public double euclideanDistance(Particle<List<Integer>> p) {
-		int sum1 =0;
-		for(int i=0 ;i<3 ;i++)
+		int sum1 = 0;
+		for (int i = 0; i < 3; i++)
 			sum1 += (properties.get(i) - p.getProperties().get(i)) * (properties.get(i) - p.getProperties().get(i));
 		return Math.sqrt(sum1);
 	}
