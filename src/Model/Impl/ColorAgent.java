@@ -2,23 +2,37 @@ package Model.Impl;
 
 import java.util.*;
 
-import Model.Abstraction.Agent;
+import Model.Abstraction.*;
 
 public class ColorAgent implements Agent{
 	
 	private Random rand = new Random();
 	private int posX,posY ;
 	private int maxX, maxY;
-	private boolean hasPayload ;
-	public ColorAgent(int maxX, int maxY) {
-		this.maxX= maxX;
-		this.maxY = maxY;
+	private Particle particle ;
+	public ColorAgent() {
+		this.maxX= Core.getMaxX();
+		this.maxY = Core.getMaxY();
 		posX = rand.nextInt(maxX);
 		posY = rand.nextInt(maxY);
-		hasPayload = false;
+	}
+
+	public boolean hasPayload() {
+		return particle!=null;
 	}
 	
-	
+	public Particle getParticle() {
+		return particle;
+	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
 	@Override
 	public void iterate() {
 		move();
@@ -34,6 +48,5 @@ public class ColorAgent implements Agent{
 			velY = rand.nextInt(2)-1;
 		posX += velX;
 		posY += velY;
-	}
-	
+	}	
 }

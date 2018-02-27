@@ -1,7 +1,7 @@
 package Model.Abstraction;
 
-import java.util.*;
-
-public interface Particle extends Comparable<Particle>{
-	List<?> getProperties() ;
+public interface Particle<E> {
+	E getProperties() ;
+	double euclideanDistance(Particle<E> p);
+	//TODO poner getters y setters
 }
