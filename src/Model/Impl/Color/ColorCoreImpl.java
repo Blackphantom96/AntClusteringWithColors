@@ -14,6 +14,9 @@ public class ColorCoreImpl implements Core<List<Integer>> {
 	private final int sizeX;
 	private final int sizeY;
 	private final int r;
+	private final int populationSize;
+	private final int particleSize;
+	
 	
 	private Particle<List<Integer>>[][] grid;
 
@@ -25,6 +28,8 @@ public class ColorCoreImpl implements Core<List<Integer>> {
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
 		this.r = r;
+		this.populationSize = population;
+		this.particleSize = particles;
 	}
 
 	@Override
@@ -60,5 +65,17 @@ public class ColorCoreImpl implements Core<List<Integer>> {
 	@Override
 	public int getRadio() {
 		return r;
+	}
+
+	@Override
+	public int getPopulationSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getParticleSize() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

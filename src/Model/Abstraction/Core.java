@@ -14,4 +14,8 @@ public interface Core<E> {
 	public double getK2();
 
 	public int getRadio();
+	
+	public int getPopulationSize();
+	
+	public int getParticleSize();
 }
