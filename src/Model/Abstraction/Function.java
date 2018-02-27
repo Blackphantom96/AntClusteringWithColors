@@ -1,8 +1,7 @@
 package Model.Abstraction;
 
-public interface Function {
-	int probP(int x, int y) ;
-	int probD(int x, int y) ;
-	double visionFunction(int x, int y, int r, Particle<?> p);
-	//TODO poner getters y setters
+public interface Function<E> {
+	int probPick(int x, int y) ;
+	int probDeposit(int x, int y) ;
+	double itemPerceivedFraction(int x, int y, int r, Particle<E> p);
 }

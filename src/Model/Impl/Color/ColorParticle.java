@@ -1,4 +1,4 @@
-package Model.Impl;
+package Model.Impl.Color;
 
 import java.util.*;
 
