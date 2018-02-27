@@ -23,4 +23,9 @@ public class ColorPopulation implements Population{
 		}
 	}
 
+	@Override
+	public Agent[][] getAgents() {
+		return agents;
+	}
+
 }

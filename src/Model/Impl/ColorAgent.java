@@ -9,26 +9,31 @@ public class ColorAgent implements Agent{
 	private Random rand = new Random();
 	private int posX,posY ;
 	private int maxX, maxY;
-	private Particle particle ;
+	private ColorParticle particle ;
+	
 	public ColorAgent() {
 		this.maxX= Core.getMaxX();
 		this.maxY = Core.getMaxY();
 		posX = rand.nextInt(maxX);
 		posY = rand.nextInt(maxY);
 	}
-
+	
+	@Override
 	public boolean hasPayload() {
 		return particle!=null;
 	}
 	
-	public Particle getParticle() {
+	@Override
+	public ColorParticle getParticle() {
 		return particle;
 	}
-
+	
+	@Override
 	public int getPosX() {
 		return posX;
 	}
-
+	
+	@Override
 	public int getPosY() {
 		return posY;
 	}

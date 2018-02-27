@@ -9,6 +9,7 @@ public class ColorParticle implements Particle<List<Integer>>{
 	private int posX, posY ;
 	private Random rand = new Random();
 	private ArrayList<Integer> properties;
+	
 	public ColorParticle() {
 		posX = rand.nextInt(Core.getMaxX());
 		posY = rand.nextInt(Core.getMaxY());
@@ -17,11 +18,13 @@ public class ColorParticle implements Particle<List<Integer>>{
 		properties.add(rand.nextInt(256));
 		properties.add(rand.nextInt(256));
 	}
-	
+
+	@Override
 	public int getPosX() {
 		return posX;
 	}
-
+	
+	@Override
 	public int getPosY() {
 		return posY;
 	}
