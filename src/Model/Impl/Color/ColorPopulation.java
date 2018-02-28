@@ -10,10 +10,11 @@ public class ColorPopulation implements Population {
 	private Random rand = new Random();
 
 	private ColorAgent[][] agents;
-	
+	private int maxX;
+	private int maxY;
 	public ColorPopulation(int population) {
-		int maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
-		int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
+		this.maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
+		this.maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
 		agents = new ColorAgent[maxX][maxY];
 		int numberOfAgents = CoreFactoryCreator.getFactory().getInstance().getPopulationSize();
 		while(numberOfAgents!=0) {
@@ -28,10 +29,8 @@ public class ColorPopulation implements Population {
 
 	@Override
 	public void update() {
-		int maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
-		int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
 		for (int i = 0; i < maxX; i++) {
-			for (int j = 0; j < maxY; j++) { //XXX esto puede ocasionar un doble movimiento en los agentes.
+			for (int j = 0; j < maxY; j++) { //FIXME esto puede ocasionar un doble movimiento en los agentes. se propone poner un booleano a ver si ya fue movido. 
 				if(agents[i][j]!=null) {
 					int[] moved = agents[i][j].move();
 					while(agents[moved[0]][moved[1]]!=null) //para que no se "sobre escriban" agentes.

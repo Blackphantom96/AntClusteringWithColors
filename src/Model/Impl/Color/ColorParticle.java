@@ -5,13 +5,13 @@ import java.util.*;
 import Model.Abstraction.*;
 import Model.Impl.CoreFactoryCreator;
 
-public class ColorParticle implements Particle<List<Integer>> {
+public class ColorParticle implements Particle<int[]> {
 
 	private static final int COLOR_DEPTH = 256;
 
 	private int posX, posY;
 	private static Random rand = new Random();
-	private ArrayList<Integer> properties;
+	private int[] properties;
 
 	public ColorParticle() {
 		this(rand.nextInt(COLOR_DEPTH), rand.nextInt(COLOR_DEPTH), rand.nextInt(COLOR_DEPTH));
@@ -22,7 +22,7 @@ public class ColorParticle implements Particle<List<Integer>> {
 		int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
 		posX = rand.nextInt(maxX);
 		posY = rand.nextInt(maxY);
-		properties = new ArrayList<>(Arrays.asList(r, g, b));
+		properties = new int[] {r,g,b};
 	}
 
 	@Override
@@ -36,15 +36,15 @@ public class ColorParticle implements Particle<List<Integer>> {
 	}
 
 	@Override
-	public List<Integer> getProperties() {
+	public int[] getProperties() {
 		return properties;
 	}
 
 	@Override
-	public double euclideanDistance(Particle<List<Integer>> p) {
+	public double euclideanDistance(Particle<int[]> p) {
 		int sum1 = 0;
 		for (int i = 0; i < 3; i++)
-			sum1 += Math.pow(properties.get(i) - p.getProperties().get(i), 2);
+			sum1 += Math.pow(properties[i] - p.getProperties()[i], 2);
 		return Math.sqrt(sum1);
 	}
 }

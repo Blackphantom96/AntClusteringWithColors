@@ -1,14 +1,15 @@
 package Model.Impl.Color;
 
-import java.util.List;
+import java.util.*;
+
 import Model.Abstraction.Core;
 import Model.Abstraction.Particle;
 import Model.Abstraction.Population;
 
-public class ColorCoreImpl implements Core<List<Integer>> {
+public class ColorCoreImpl implements Core<int[]> {
 
 	private final Population population;
-	private final List<Particle<List<Integer>>> particles; // XXX toca mirar
+	///private final List<Particle<int[]>> particles; // XXX toca mirar Juan: que es eso ¿?
 	private final double k1;
 	private final double k2;
 	private final int sizeX;
@@ -16,13 +17,12 @@ public class ColorCoreImpl implements Core<List<Integer>> {
 	private final int r;
 	private final int populationSize;
 	private final int particleSize;
-	
-	
-	private Particle<List<Integer>>[][] grid;
+	private Random rand = new Random();
+	private Particle<int[]>[][] grid;
 
 	public ColorCoreImpl(int population, int particles, double k1, double k2, int sizeX, int sizeY, int r) {
 		this.population = new ColorPopulation(population);
-		this.particles = null; // TODO falta
+		///this.particles = null; // TODO falta
 		this.k1 = k1;
 		this.k2 = k2;
 		this.sizeX = sizeX;
@@ -30,6 +30,7 @@ public class ColorCoreImpl implements Core<List<Integer>> {
 		this.r = r;
 		this.populationSize = population;
 		this.particleSize = particles;
+		generateParticleMatrix(); //genera la matriz de particulas. es obvio :v 
 	}
 
 	@Override
@@ -48,8 +49,8 @@ public class ColorCoreImpl implements Core<List<Integer>> {
 	}
 
 	@Override
-	public Particle<List<Integer>>[] getParticles() {
-		return null; // TODO terminar
+	public Particle<int[]>[][] getParticles() {
+		return grid; // TODO terminar
 	}
 
 	@Override
@@ -69,13 +70,24 @@ public class ColorCoreImpl implements Core<List<Integer>> {
 
 	@Override
 	public int getPopulationSize() {
-		// TODO Auto-generated method stub
-		return 0;
+		return populationSize;
 	}
 
 	@Override
 	public int getParticleSize() {
-		// TODO Auto-generated method stub
-		return 0;
+		return particleSize;
+	}
+
+	@Override
+	public void generateParticleMatrix() {
+		int particleSizeCopy = particleSize; //hay que ver si no modifica particleSize. es una pseudo-Copia
+		while(particleSizeCopy!=0) {
+			int x=rand.nextInt(sizeX);
+			int y=rand.nextInt(sizeY);
+			if(grid[x][y]==null) {
+				grid[x][y]=new ColorParticle();
+				particleSizeCopy--;
+			}
+		}
 	}
 }

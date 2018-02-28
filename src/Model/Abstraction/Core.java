@@ -7,7 +7,7 @@ public interface Core<E> {
 
 	public Population getPopulation();
 
-	public Particle<E>[] getParticles();
+	public Particle<E>[][] getParticles();
 
 	public double getK1();
 
@@ -18,4 +18,6 @@ public interface Core<E> {
 	public int getPopulationSize();
 	
 	public int getParticleSize();
+	
+	public void generateParticleMatrix();
 }
