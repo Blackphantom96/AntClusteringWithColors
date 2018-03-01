@@ -8,7 +8,7 @@ import Model.Impl.Color.*;
 public class ConsoleMain {
 	public static void main(String[] args) {
 		Random rand = new Random();
-		ColorCoreImpl a = (ColorCoreImpl) CoreFactoryCreator.getFactory().createInstance(50, 100, 0.5, 0.5, 10, 40, 1,
+		ColorCoreImpl a = (ColorCoreImpl) CoreFactoryCreator.getFactory().createInstance(50, 100, 0.5, 0.0, 10, 40, 1,
 				0.5);
 		ColorFunction functions = new ColorFunction();
 		a.startPopulation();
@@ -35,6 +35,7 @@ public class ConsoleMain {
 							}
 						} else if (tempAgent.hasPayload() && tempParticle == null) {
 							int pd = functions.probDeposit(i, j, tempAgent.getParticle());
+							//System.out.println(pd);
 							if (rand.nextInt(100) + 1 < pd) {
 								a.getParticles()[i][j] = tempAgent.getParticle();
 								tempAgent.setParticle(null);
