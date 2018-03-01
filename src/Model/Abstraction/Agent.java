@@ -1,5 +1,6 @@
 package Model.Abstraction;
 
+
 public interface Agent {
 	void iterate();
 
@@ -16,5 +17,7 @@ public interface Agent {
 	void setPosX(int x);
 	
 	void setPosY(int y);
+
+	void setParticle(Particle<?> tempParticle);
 
 }

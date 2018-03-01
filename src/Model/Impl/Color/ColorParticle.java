@@ -47,4 +47,16 @@ public class ColorParticle implements Particle<int[]> {
 			sum1 += Math.pow(properties[i] - p.getProperties()[i], 2);
 		return Math.sqrt(sum1);
 	}
+	
+	@Override
+	public String toString() {
+		if (properties[0]>properties[1] && properties[0]>properties[2])
+			return "R";
+		else if (properties[1]>properties[0] && properties[1]>properties[2])
+			return "G";
+		else if (properties[2]>properties[1] && properties[2]>properties[1])
+			return "B";
+		else
+			return "C";
+	}
 }

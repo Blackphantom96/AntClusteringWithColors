@@ -8,4 +8,6 @@ public interface Particle<E> {
 	int getPosX();
 
 	int getPosY();
+	
+	String toString();
 }

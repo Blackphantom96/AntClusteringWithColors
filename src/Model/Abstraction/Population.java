@@ -1,7 +1,11 @@
 package Model.Abstraction;
 
 public interface Population {
-	void update();
+	void move(int i,int j);
 
 	Agent[][] getAgents();
+
+	String toString();
+	
+	
 }

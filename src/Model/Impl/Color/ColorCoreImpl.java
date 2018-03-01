@@ -8,7 +8,7 @@ import Model.Abstraction.Population;
 
 public class ColorCoreImpl implements Core<int[]> {
 
-	private final Population population;
+	private Population population;
 	///private final List<Particle<int[]>> particles; // XXX toca mirar Juan: que es eso ¿?
 	private final double k1;
 	private final double k2;
@@ -17,11 +17,12 @@ public class ColorCoreImpl implements Core<int[]> {
 	private final int r;
 	private final int populationSize;
 	private final int particleSize;
+	private final double alpha;
 	private Random rand = new Random();
 	private Particle<int[]>[][] grid;
+	
 
-	public ColorCoreImpl(int population, int particles, double k1, double k2, int sizeX, int sizeY, int r) {
-		this.population = new ColorPopulation(population);
+	public ColorCoreImpl(int population, int particles, double k1, double k2, int sizeX, int sizeY, int r, double alpha) {
 		///this.particles = null; // TODO falta
 		this.k1 = k1;
 		this.k2 = k2;
@@ -30,7 +31,13 @@ public class ColorCoreImpl implements Core<int[]> {
 		this.r = r;
 		this.populationSize = population;
 		this.particleSize = particles;
-		generateParticleMatrix(); //genera la matriz de particulas. es obvio :v 
+		this.alpha = alpha;
+		this.population = null;
+	}
+	
+	@Override
+	public double getAlpha() {
+		return alpha;
 	}
 
 	@Override
@@ -80,7 +87,8 @@ public class ColorCoreImpl implements Core<int[]> {
 
 	@Override
 	public void generateParticleMatrix() {
-		int particleSizeCopy = particleSize; //hay que ver si no modifica particleSize. es una pseudo-Copia
+		int particleSizeCopy = particleSize; 
+		grid =new ColorParticle[sizeX][sizeY]; 
 		while(particleSizeCopy!=0) {
 			int x=rand.nextInt(sizeX);
 			int y=rand.nextInt(sizeY);
@@ -89,5 +97,11 @@ public class ColorCoreImpl implements Core<int[]> {
 				particleSizeCopy--;
 			}
 		}
+	}
+
+	@Override
+	public void startPopulation() {
+		population = new ColorPopulation(populationSize);
+		
 	}
 }

@@ -45,14 +45,14 @@ public class ColorAgent implements Agent {
 	}
 
 	@Override
-	public int[] move() {
-		int velX = rand.nextInt(2) - 1;
-		int velY = rand.nextInt(2) - 1;
-		while (posX + velX < 0 || posX + velX > maxX)
-			velX = rand.nextInt(2) - 1;
-		while (posY + velY < 0 || posX + velY > maxY)
-			velY = rand.nextInt(2) - 1;
-		return new int [] {velX,velY}; //se tiene que mover en la matriz.
+	public int[] move() { //FIXME estos agentes tienden a irse para abajo
+		int velX = rand.nextInt(3) - 1;
+		int velY = rand.nextInt(3) - 1;
+		while ( (posX + velX) < 0 || (posX + velX) > maxX)
+			velX = rand.nextInt(3) - 1;
+		while ((posY + velY) < 0 || (posX + velY) > maxY) 
+			velY = rand.nextInt(3) - 1;
+		return new int [] {posX+velX,posY+velY}; 
 	}
 
 	@Override
@@ -63,5 +63,15 @@ public class ColorAgent implements Agent {
 	@Override
 	public void setPosY(int y) {
 		posY = y;
+	}
+	
+	@Override
+	public String toString() {
+		return "*";
+	} 
+	
+	@Override
+	public void setParticle(Particle<?> tempParticle) {
+		particle = (ColorParticle) tempParticle;
 	}
 }

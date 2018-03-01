@@ -20,4 +20,9 @@ public interface Core<E> {
 	public int getParticleSize();
 	
 	public void generateParticleMatrix();
+	
+	public double getAlpha();
+	
+	public void startPopulation();
+	
 }
