@@ -29,10 +29,10 @@ public class ColorPopulation implements Population {
 	}
 
 	@Override
-	public void move(int i, int j) { //FIXME verificar movimiento, ya que tienen a irse abajo "ya se que ya lo puse"
+	public void move(int i, int j) {
 		if (agents[i][j] != null) {
 			int[] moved = agents[i][j].move();
-			while (agents[moved[0]][moved[1]] != null) 
+			while (agents[moved[0]][moved[1]] != null && !(moved[0]==i && moved[1]==j) ) 
 				moved = agents[i][j].move();
 			ColorAgent temp = agents[i][j]; 
 			agents[i][j] = null;

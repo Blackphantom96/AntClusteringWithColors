@@ -45,13 +45,14 @@ public class ColorAgent implements Agent {
 	}
 
 	@Override
-	public int[] move() { //FIXME estos agentes tienden a irse para abajo
-		int velX = rand.nextInt(3) - 1;
+	public int[] move() { 
+		int velX = rand.nextInt(3) - 1; 
 		int velY = rand.nextInt(3) - 1;
-		while ( (posX + velX) < 0 || (posX + velX) > maxX)
+		while ( (posX + velX) < 0 || (posX + velX) >= maxX)
 			velX = rand.nextInt(3) - 1;
-		while ((posY + velY) < 0 || (posX + velY) > maxY) 
+		while ((posY + velY) < 0 || (posY + velY) >= maxY) {
 			velY = rand.nextInt(3) - 1;
+		}
 		return new int [] {posX+velX,posY+velY}; 
 	}
 
