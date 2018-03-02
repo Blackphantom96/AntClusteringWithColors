@@ -1,0 +1,30 @@
+% Venn diagramm with PGF 3.0 blend mode
+% Author: Paul Gaborit
+\documentclass[tikz,border=1000pt]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\begin{document}
+\begin{tikzpicture}[thick,scale=20, every node/.style={scale=0.6}]
+\begin{axis}[
+ybar = 0pt,
+bar width = 0.45,	
+enlarge x limits={abs=1},
+xtick=data,
+]
+\addplot table[x=Particle,y=Metric]{Datos/exp1.dat};
+\end{axis}
+\end{tikzpicture}	
+
+\begin{tikzpicture}[thick,scale=20, every node/.style={scale=0.6}]
+\begin{axis}[
+ybar = 0pt,
+bar width = 0.45,	
+enlarge x limits={abs=1},
+xtick=data,
+]
+\addplot table[x=Particle,y=Metric]{Datos/exp2.dat}; % aca se agrega el archivo
+\addplot table[x=Particle,y=Metric]{Datos/exp2.dat}; % aca se agrega el archivo
+
+\end{axis}
+\end{tikzpicture}	
+\end{document}
