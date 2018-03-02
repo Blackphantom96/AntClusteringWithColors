@@ -18,23 +18,13 @@ public class ColorFunction implements Function<int[]> {
 	public int probDeposit(int x, int y, Particle<int[]> p) { // Eq 5.15
 		double fx = itemAverageSimilarity(y, x, CoreFactoryCreator.getFactory().getInstance().getRadio(), p);
 		double k2 = CoreFactoryCreator.getFactory().getInstance().getK2();
-		System.out.println("fx = " + fx);
 		return (int) ((fx < k2 ? 2.0 * fx : 1.0) * 100.0);
 	}
 
 	@Override
 	public double itemPerceivedFraction(int x, int y, int r, Particle<int[]> p) { // XXX verificar si esto es
-																					// necesario .
-		int maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
-		int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
-		for (int i = x - r; i < x + r; i++) {
-			for (int j = y - r; j < y + r; j++)
-				if (0 <= i && i < maxX && 0 <= j && j < maxY) {
-
-				}
-		}
-
-		return 0;
+		System.out.println("Esta funcion no debe llamarse");
+		return 0.0;
 	}
 
 	@Override
@@ -46,21 +36,18 @@ public class ColorFunction implements Function<int[]> {
 		int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
 		double alpha = CoreFactoryCreator.getFactory().getInstance().getAlpha();
 		double sum = 0.0;
-		for (int i = x - r; i <= x + r; i++) { // FIXME verificar estos rangos
+		for (int i = x - r; i <= x + r; i++) {
 			for (int j = y - r; j <= y + r; j++) {
-				//System.out.println("0<=" + i + "<" + maxX + "- 0<=" + j + "<" + maxY);
 				if (0 <= i && i < maxX && 0 <= j && j < maxY) {
 					ColorParticle tempParticle = (ColorParticle) CoreFactoryCreator.getFactory().getInstance()
 							.getParticles()[i][j];
 					if (tempParticle != null) {
 						sum += 1.0 - (p.euclideanDistance(tempParticle) / alpha);
-						// System.out.println(sum);
 					}
 				}
 			}
 		}
 		double f = sum / (r * r);
-		// System.out.println(f);
 		return f > 0.0 ? f : 0.0;
 	}
 
