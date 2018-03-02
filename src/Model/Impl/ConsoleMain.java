@@ -15,6 +15,7 @@ public class ConsoleMain {
 
 	private static Map<String, Number> inputData;
 	private static boolean shouldPrintStatus;
+	private static ColorCoreImpl a;
 
 	private static final int MIN_NUMBER_ARGS = 9;
 
@@ -53,7 +54,7 @@ public class ConsoleMain {
 		Random rand = new Random();
 		parseInputData(args);
 
-		ColorCoreImpl a = (ColorCoreImpl) CoreFactoryCreator.getFactory().createInstance(
+		a = (ColorCoreImpl) CoreFactoryCreator.getFactory().createInstance(
 				inputData.get("population").intValue(), inputData.get("particles").intValue(),
 				inputData.get("k1").doubleValue(), inputData.get("k2").doubleValue(), inputData.get("sizeX").intValue(),
 				inputData.get("sizeY").intValue(), inputData.get("radio").intValue(),
@@ -119,13 +120,13 @@ public class ConsoleMain {
 
 	public static void printMetrics(Core<int[]> core) {
 		List<Double> metricsData = new ArrayList<>();
-		for (Particle<int[]> particles[] : core.getParticles()) {
-			for (Particle<int[]> particle : particles) {
-				double metric = calculateMetric(particle);
+		for(int i = 0; i< a.getMaxX();i++) {
+			for(int j = 0; j< a.getMaxY();j++) if (a.getParticles()[i][j]!=null){
+				Particle<int[]> par = a.getParticles()[i][j];
+				double metric = calculateMetric(par,i,j);
 				metricsData.add(metric);
 			}
 		}
-		
 		printMetricFormat(metricsData);
 	}
 	
@@ -137,8 +138,15 @@ public class ConsoleMain {
 		}
 	}
 	
-	public static double calculateMetric(Particle<int[]> p) {
-		
-		return 0.0;
+	public static double calculateMetric(Particle<int[]> p,int i1, int j1) {
+		double sum = 0.0;
+		for(int i = 0; i< a.getMaxX();i++) {
+			for(int j = 0; j< a.getMaxY();j++) if (j1!=j && i1!=i && a.getParticles()[i][j]!=null){
+				Particle<int[]> par = a.getParticles()[i][j];
+				double euclidenanDistance = Math.sqrt((j1-j)*(j1-j)+(i1-i)*(i1-i));
+				sum+= (1/par.euclideanDistance(p)) * (1/euclidenanDistance);
+			}
+		}
+		return sum;
 	}
 }
