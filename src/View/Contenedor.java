@@ -9,10 +9,10 @@ import javax.swing.JFrame;
 
 public class Contenedor extends JFrame{
 	private Drawer drawer ;
-	public Contenedor(int population, int particles, double k1, double k2, int gridX, int gridY, int radio, double alpha, int resX, int resY) {
-		super();//TODO pasar los ciclos
+	public Contenedor(int population, int particles, double k1, double k2, int gridX, int gridY, int radio, double alpha, double resX, int cicles) {
+		super();
 		setTitle("Ant Cluster Simulation");
-		setSize(resX, resY);
+		setSize((int)resX*gridX, (int)resX*gridX);
 		getContentPane().setBackground(Color.white);
 		setResizable(false);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -20,7 +20,7 @@ public class Contenedor extends JFrame{
 		int yEsquina = (screen.height - getSize().height) / 2;	
 		setLocation(xEsquina, yEsquina);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		drawer = new Drawer(population,particles,k1,k2,gridX,gridY,radio,alpha);
+		drawer = new Drawer(population,particles,k1,k2,gridX,gridX,radio,alpha,resX,cicles);
 		add(drawer,BorderLayout.CENTER);
 	}
 }

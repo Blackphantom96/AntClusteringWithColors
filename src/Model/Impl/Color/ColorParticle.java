@@ -14,7 +14,7 @@ public class ColorParticle implements Particle<int[]> {
 	private int[] properties;
 
 	public ColorParticle() {
-		this(rand.nextInt(COLOR_DEPTH), rand.nextInt(COLOR_DEPTH), rand.nextInt(COLOR_DEPTH));
+		this(255, 255, 255);
 	}
 
 	public ColorParticle(int r, int g, int b) {
@@ -22,7 +22,15 @@ public class ColorParticle implements Particle<int[]> {
 		int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
 		posX = rand.nextInt(maxX);
 		posY = rand.nextInt(maxY);
-		properties = new int[] {r,g,b};
+		properties = new int[] { r, g, b };
+		int c = 0;
+		while(c!=2) {
+			int x = rand.nextInt(3);
+			if(properties[x]!=0) {
+				properties[x]*=0;
+				c++;
+			}
+		}
 	}
 
 	@Override
@@ -47,14 +55,14 @@ public class ColorParticle implements Particle<int[]> {
 			sum1 += Math.pow(properties[i] - p.getProperties()[i], 2);
 		return Math.sqrt(sum1);
 	}
-	
+
 	@Override
 	public String toString() {
-		if (properties[0]>properties[1] && properties[0]>properties[2])
+		if (properties[0] > properties[1] && properties[0] > properties[2])
 			return "R";
-		else if (properties[1]>properties[0] && properties[1]>properties[2])
+		else if (properties[1] > properties[0] && properties[1] > properties[2])
 			return "G";
-		else if (properties[2]>properties[1] && properties[2]>properties[1])
+		else if (properties[2] > properties[1] && properties[2] > properties[1])
 			return "B";
 		else
 			return "C";
