@@ -2,6 +2,7 @@ package Model.Impl;
 
 import java.util.*;
 
+import Model.Abstraction.Agent;
 import Model.Abstraction.Core;
 import Model.Abstraction.Particle;
 import Model.Impl.Color.*;
@@ -54,11 +55,10 @@ public class ConsoleMain {
 		Random rand = new Random();
 		parseInputData(args);
 
-		a = (ColorCoreImpl) CoreFactoryCreator.getFactory().createInstance(
-				inputData.get("population").intValue(), inputData.get("particles").intValue(),
-				inputData.get("k1").doubleValue(), inputData.get("k2").doubleValue(), inputData.get("sizeX").intValue(),
-				inputData.get("sizeY").intValue(), inputData.get("radio").intValue(),
-				inputData.get("alpha").doubleValue());
+		a = (ColorCoreImpl) CoreFactoryCreator.getFactory().createInstance(inputData.get("population").intValue(),
+				inputData.get("particles").intValue(), inputData.get("k1").doubleValue(),
+				inputData.get("k2").doubleValue(), inputData.get("sizeX").intValue(), inputData.get("sizeY").intValue(),
+				inputData.get("radio").intValue(), inputData.get("alpha").doubleValue());
 		ColorFunction functions = new ColorFunction();
 
 		a.createPopulation();
@@ -71,6 +71,8 @@ public class ConsoleMain {
 		if (shouldPrintStatus) {
 			printMatrixStatus(a);
 		}
+
+		printMetrics(a);
 
 		while (iteration++ < maxIterations || maxIterations == -1) {
 			if (iteration % 100 == 0 && shouldPrintStatus) {
@@ -105,7 +107,7 @@ public class ConsoleMain {
 		if (shouldPrintStatus) {
 			printMatrixStatus(a);
 		}
-		
+
 		printMetrics(a);
 	}
 
@@ -118,18 +120,35 @@ public class ConsoleMain {
 		}
 	}
 
-	public static void printMetrics(Core<int[]> core) {
+	public static void printMetrics(Core<int[]> core) { // este metodo NO se debe llamar en medio de la ejecucion
 		List<Double> metricsData = new ArrayList<>();
-		for(int i = 0; i< a.getMaxX();i++) {
-			for(int j = 0; j< a.getMaxY();j++) if (a.getParticles()[i][j]!=null){
-				Particle<int[]> par = a.getParticles()[i][j];
-				double metric = calculateMetric(par,i,j);
-				metricsData.add(metric);
+
+		for (Agent[] agents : core.getPopulation().getAgents()) {
+			for (Agent agent : agents) {
+				if (agent != null) {
+					int i = agent.getPosX();
+					int j = agent.getPosY();
+					Particle<int[]>[][] particles = core.getParticles();
+					if (particles[i][j] != null) {
+						// System.err.println("Oops " + i + " " + j);
+						particles[i][j] = ((Particle<int[]>) agent.getParticle());
+					}
+					agent.setParticle(null);
+				}
 			}
+		}
+
+		for (int i = 0; i < core.getMaxX(); i++) {
+			for (int j = 0; j < core.getMaxY(); j++)
+				if (core.getParticles()[i][j] != null) {
+					Particle<int[]> par = core.getParticles()[i][j];
+					double metric = calculateMetric(par, i, j);
+					metricsData.add(metric);
+				}
 		}
 		printMetricFormat(metricsData);
 	}
-	
+
 	public static void printMetricFormat(List<Double> values) {
 		int i = 1;
 		System.out.println("Particle Metric");
@@ -137,15 +156,16 @@ public class ConsoleMain {
 			System.out.println(i++ + " " + val);
 		}
 	}
-	
-	public static double calculateMetric(Particle<int[]> p,int i1, int j1) {
+
+	public static double calculateMetric(Particle<int[]> p, int i1, int j1) {
 		double sum = 0.0;
-		for(int i = 0; i< a.getMaxX();i++) {
-			for(int j = 0; j< a.getMaxY();j++) if (j1!=j && i1!=i && a.getParticles()[i][j]!=null){
-				Particle<int[]> par = a.getParticles()[i][j];
-				double euclidenanDistance = Math.sqrt((j1-j)*(j1-j)+(i1-i)*(i1-i));
-				sum+= (1/par.euclideanDistance(p)) * (1/euclidenanDistance);
-			}
+		for (int i = 0; i < a.getMaxX(); i++) {
+			for (int j = 0; j < a.getMaxY(); j++)
+				if (j1 != j && i1 != i && a.getParticles()[i][j] != null) {
+					Particle<int[]> par = a.getParticles()[i][j];
+					double euclidenanDistance = Math.sqrt((j1 - j) * (j1 - j) + (i1 - i) * (i1 - i));
+					sum += (1.0 / par.euclideanDistance(p)) * (1.0 / euclidenanDistance);
+				}
 		}
 		return sum;
 	}
