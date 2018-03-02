@@ -15,5 +15,4 @@ public interface Function<E> {
 	 * @param p particula
 	 * @return fraccion de percepcion de la particula p
 	 */
-	double itemPerceivedFraction(int x, int y, int r, Particle<E> p);
 }
