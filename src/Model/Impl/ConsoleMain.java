@@ -2,6 +2,7 @@ package Model.Impl;
 
 import java.util.*;
 
+import Model.Abstraction.Core;
 import Model.Abstraction.Particle;
 import Model.Impl.Color.*;
 
@@ -13,9 +14,9 @@ public class ConsoleMain {
 	}
 
 	private static Map<String, Number> inputData;
-	private static boolean printStatus;
+	private static boolean shouldPrintStatus;
 
-	private static final int NUMBER_ARGS = 9;
+	private static final int MIN_NUMBER_ARGS = 9;
 
 	public static void parseInputData(String[] args) throws Exception {
 		inputData = new HashMap<>();
@@ -23,8 +24,8 @@ public class ConsoleMain {
 		System.out.println("Input Data: " + Arrays.toString(args));
 		System.out.println("Size of Input Data: " + args.length);
 
-		if (args.length < NUMBER_ARGS) {
-			System.err.println("Error: must be 9 parameters");
+		if (args.length < MIN_NUMBER_ARGS) {
+			System.err.println("Error: must be at least " + MIN_NUMBER_ARGS + " parameters");
 			printHelp();
 			System.exit(1);
 		}
@@ -39,10 +40,10 @@ public class ConsoleMain {
 		inputData.put("alpha", Double.parseDouble(args[7]));
 		inputData.put("iterations", Integer.parseInt(args[8]));
 
-		if (args.length == NUMBER_ARGS + 1) {
-			printStatus = Boolean.parseBoolean(args[9]);
+		if (args.length == MIN_NUMBER_ARGS + 1) {
+			shouldPrintStatus = Boolean.parseBoolean(args[9]);
 		} else {
-			printStatus = true;
+			shouldPrintStatus = true;
 		}
 
 		System.out.println(inputData);
@@ -65,17 +66,15 @@ public class ConsoleMain {
 		int maxY = a.getMaxY();
 		int maxIterations = inputData.get("iterations").intValue();
 		int iteration = 0;
+
+		if (shouldPrintStatus) {
+			printMatrixStatus(a);
+		}
+
 		while (iteration++ < maxIterations || maxIterations == -1) {
-			if (iteration % 100 == 0 && printStatus) {
+			if (iteration % 100 == 0 && shouldPrintStatus) {
 				System.out.println("Iteration: " + iteration);
 			}
-
-			// System.out.println(a.getPopulation().toString());
-			// for (Particle<int[]>[] p : a.getParticles()) {
-			// for (Particle<int[]> q : p)
-			// System.out.print(q != null ? q : ".");
-			// System.out.println();
-			// }
 
 			for (int i = 0; i < maxX; i++) {
 				for (int j = 0; j < maxY; j++) {
@@ -101,5 +100,45 @@ public class ConsoleMain {
 				}
 			}
 		}
+
+		if (shouldPrintStatus) {
+			printMatrixStatus(a);
+		}
+		
+		printMetrics(a);
+	}
+
+	public static void printMatrixStatus(Core<int[]> core) {
+		System.out.println(core.getPopulation().toString());
+		for (Particle<int[]>[] p : core.getParticles()) {
+			for (Particle<int[]> q : p)
+				System.out.print(q != null ? q : ".");
+			System.out.println();
+		}
+	}
+
+	public static void printMetrics(Core<int[]> core) {
+		List<Double> metricsData = new ArrayList<>();
+		for (Particle<int[]> particles[] : core.getParticles()) {
+			for (Particle<int[]> particle : particles) {
+				double metric = calculateMetric(particle);
+				metricsData.add(metric);
+			}
+		}
+		
+		printMetricFormat(metricsData);
+	}
+	
+	public static void printMetricFormat(List<Double> values) {
+		int i = 1;
+		System.out.println("Particle;Metric;");
+		for (Double val : values) {
+			System.out.println(i++ + ";" + val + ";");
+		}
+	}
+	
+	public static double calculateMetric(Particle<int[]> p) {
+		
+		return 0.0;
 	}
 }
