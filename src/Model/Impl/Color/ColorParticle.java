@@ -14,7 +14,7 @@ public class ColorParticle implements Particle<int[]> {
 	private int[] properties;
 
 	public ColorParticle() {
-		this(255, 255, 255);
+		this(rand.nextInt(COLOR_DEPTH), rand.nextInt(COLOR_DEPTH), rand.nextInt(COLOR_DEPTH));
 	}
 
 	public ColorParticle(int r, int g, int b) {
@@ -23,6 +23,7 @@ public class ColorParticle implements Particle<int[]> {
 		posX = rand.nextInt(maxX);
 		posY = rand.nextInt(maxY);
 		properties = new int[] { r, g, b };
+		/*
 		int c = 0;
 		while(c!=2) {
 			int x = rand.nextInt(3);
@@ -30,7 +31,8 @@ public class ColorParticle implements Particle<int[]> {
 				properties[x]*=0;
 				c++;
 			}
-		}
+		
+		}*/
 	}
 
 	@Override
