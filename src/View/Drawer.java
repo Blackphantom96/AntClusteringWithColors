@@ -33,8 +33,8 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 	private boolean flag;
 
 	public Drawer(int population, int particles, double k1, double k2, int gridX, int gridY, int radio, double alpha) {
-		core = (ColorCoreImpl) CoreFactoryCreator.getFactory().createInstance(population, particles, k1, k2, gridX, gridY, radio,
-				alpha);
+		core = (ColorCoreImpl) CoreFactoryCreator.getFactory().createInstance(population, particles, k1, k2, gridX,
+				gridY, radio, alpha);
 		core.createPopulation();
 		core.generateParticleMatrix();
 		flag = true;
@@ -68,11 +68,11 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 				}
 			}
 		}
-//		g.drawString("Mutation: " + mutation + "%", 0, 410);
-//		g.drawString("Population: " + pobla, 0, 425);
-//		g.drawString("Generation: " + pop.generation, 0, 440);
-//		g.drawString("Cicles: " + (cicles - count), 0, 455);
-//		g.drawString("Max fitness: " + pop.maxFitness, 0, 470);
+		// g.drawString("Mutation: " + mutation + "%", 0, 410);
+		// g.drawString("Population: " + pobla, 0, 425);
+		// g.drawString("Generation: " + pop.generation, 0, 440);
+		// g.drawString("Cicles: " + (cicles - count), 0, 455);
+		// g.drawString("Max fitness: " + pop.maxFitness, 0, 470);
 
 	}
 
@@ -100,40 +100,38 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 		int maxY = core.getMaxY();
 		Random rand = new Random();
 		int iteration = 0;
-		while (iteration++ < 100000 && flag) {
-			repaint();
-//			System.out.println(a.getPopulation().toString());
-//			for (Particle<int[]>[] p : a.getParticles()) {
-//				for (Particle<int[]> q : p)
-//					System.out.print(q != null ? q : ".");
-//				System.out.println();
-//			}
-			
-			for (int i = 0; i < maxX; i++) {
-				for (int j = 0; j < maxY; j++) {
-					ColorAgent tempAgent = (ColorAgent) core.getPopulation().getAgents()[i][j];
-					ColorParticle tempParticle = (ColorParticle) core.getParticles()[i][j];
-					if (tempAgent != null) {
-						if (!tempAgent.hasPayload() && tempParticle != null) {
-							int pp = functions.probPick(i, j, tempParticle);
-							if (rand.nextInt(100) + 1 < pp) {
-								tempAgent.setParticle(tempParticle);
-								core.getParticles()[i][j] = null;
-							}
-						} else if (tempAgent.hasPayload() && tempParticle == null) {
-							int pd = functions.probDeposit(i, j, tempAgent.getParticle());
-							// System.out.println(pd);
-							if (rand.nextInt(100) + 1 < pd) {
-								core.getParticles()[i][j] = tempAgent.getParticle();
-								tempAgent.setParticle(null);
-							}
+		repaint();
+		// System.out.println(a.getPopulation().toString());
+		// for (Particle<int[]>[] p : a.getParticles()) {
+		// for (Particle<int[]> q : p)
+		// System.out.print(q != null ? q : ".");
+		// System.out.println();
+		// }
+
+		for (int i = 0; i < maxX; i++) {
+			for (int j = 0; j < maxY; j++) {
+				ColorAgent tempAgent = (ColorAgent) core.getPopulation().getAgents()[i][j];
+				ColorParticle tempParticle = (ColorParticle) core.getParticles()[i][j];
+				if (tempAgent != null) {
+					if (!tempAgent.hasPayload() && tempParticle != null) {
+						int pp = functions.probPick(i, j, tempParticle);
+						if (rand.nextInt(100) + 1 < pp) {
+							tempAgent.setParticle(tempParticle);
+							core.getParticles()[i][j] = null;
+						}
+					} else if (tempAgent.hasPayload() && tempParticle == null) {
+						int pd = functions.probDeposit(i, j, tempAgent.getParticle());
+						// System.out.println(pd);
+						if (rand.nextInt(100) + 1 < pd) {
+							core.getParticles()[i][j] = tempAgent.getParticle();
+							tempAgent.setParticle(null);
 						}
 					}
-					core.getPopulation().move(i, j);
 				}
+				core.getPopulation().move(i, j);
 			}
 		}
-		flag=false;
+		flag = false;
 	}
 
 }
