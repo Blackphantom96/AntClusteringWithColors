@@ -23,6 +23,6 @@ public interface Core<E> {
 	
 	public double getAlpha();
 	
-	public void startPopulation();
+	public void createPopulation();
 	
 }

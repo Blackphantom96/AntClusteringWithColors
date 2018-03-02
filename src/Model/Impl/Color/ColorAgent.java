@@ -12,7 +12,7 @@ public class ColorAgent implements Agent {
 	private int maxX, maxY;
 	private ColorParticle particle;
 
-	public ColorAgent(int x,int y) {
+	public ColorAgent(int x, int y) {
 		this.maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
 		this.maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
 		posX = x;
@@ -45,15 +45,15 @@ public class ColorAgent implements Agent {
 	}
 
 	@Override
-	public int[] move() { 
-		int velX = rand.nextInt(3) - 1; 
+	public int[] move() {
+		int velX = rand.nextInt(3) - 1;
 		int velY = rand.nextInt(3) - 1;
-		while ( (posX + velX) < 0 || (posX + velX) >= maxX)
+		while ((posX + velX) < 0 || (posX + velX) >= maxX)
 			velX = rand.nextInt(3) - 1;
 		while ((posY + velY) < 0 || (posY + velY) >= maxY) {
 			velY = rand.nextInt(3) - 1;
 		}
-		return new int [] {posX+velX,posY+velY}; 
+		return new int[] { posX + velX, posY + velY };
 	}
 
 	@Override
@@ -65,12 +65,12 @@ public class ColorAgent implements Agent {
 	public void setPosY(int y) {
 		posY = y;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "*";
-	} 
-	
+	}
+
 	@Override
 	public void setParticle(Particle<?> tempParticle) {
 		particle = (ColorParticle) tempParticle;

@@ -32,9 +32,9 @@ public class ColorPopulation implements Population {
 	public void move(int i, int j) {
 		if (agents[i][j] != null) {
 			int[] moved = agents[i][j].move();
-			while (agents[moved[0]][moved[1]] != null && !(moved[0]==i && moved[1]==j) ) 
+			while (agents[moved[0]][moved[1]] != null && !(moved[0] == i && moved[1] == j))
 				moved = agents[i][j].move();
-			ColorAgent temp = agents[i][j]; 
+			ColorAgent temp = agents[i][j];
 			agents[i][j] = null;
 			agents[moved[0]][moved[1]] = temp;
 			agents[moved[0]][moved[1]].setPosX(moved[0]);
@@ -51,9 +51,9 @@ public class ColorPopulation implements Population {
 	public String toString() {
 		String res = "\n";
 		for (Agent[] p : agents) {
-			for(Agent q : p)
-				res += q!=null? q.hasPayload()?"x":"*":".";
-			res+="\n";
+			for (Agent q : p)
+				res += q != null ? q.hasPayload() ? "x" : "*" : ".";
+			res += "\n";
 		}
 		return res;
 	}
