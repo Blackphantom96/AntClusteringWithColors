@@ -5,7 +5,7 @@ import java.util.*;
 import Model.Abstraction.*;
 import Model.Impl.CoreFactoryCreator;
 
-public class ColorPopulation implements Population {
+public class ColorPopulation implements Population<int[]> {
 
 	private Random rand = new Random();
 
@@ -43,15 +43,15 @@ public class ColorPopulation implements Population {
 	}
 
 	@Override
-	public Agent[][] getAgents() {
+	public Agent<int[]>[][] getAgents() {
 		return agents;
 	}
 
 	@Override
 	public String toString() {
 		String res = "\n";
-		for (Agent[] p : agents) {
-			for (Agent q : p)
+		for (ColorAgent[] p : agents) {
+			for (ColorAgent q : p)
 				res += q != null ? q.hasPayload() ? "x" : "*" : ".";
 			res += "\n";
 		}

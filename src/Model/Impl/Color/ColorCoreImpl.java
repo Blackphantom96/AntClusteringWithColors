@@ -4,11 +4,10 @@ import java.util.*;
 
 import Model.Abstraction.Core;
 import Model.Abstraction.Particle;
-import Model.Abstraction.Population;
 
 public class ColorCoreImpl implements Core<int[]> {
 
-	private Population population;
+	private ColorPopulation population;
 	///private final List<Particle<int[]>> particles; // XXX toca mirar Juan: que es eso ¿?
 	private final double k1;
 	private final double k2;
@@ -51,7 +50,7 @@ public class ColorCoreImpl implements Core<int[]> {
 	}
 
 	@Override
-	public Population getPopulation() {
+	public ColorPopulation getPopulation() {
 		return population;
 	}
 

@@ -5,7 +5,7 @@ public interface Core<E> {
 
 	public int getMaxY();
 
-	public Population getPopulation();
+	public Population<E> getPopulation();
 
 	public Particle<E>[][] getParticles();
 

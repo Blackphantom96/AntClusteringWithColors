@@ -1,9 +1,9 @@
 package Model.Abstraction;
 
-public interface Population {
+public interface Population<E> {
 	void move(int i,int j);
 
-	Agent[][] getAgents();
+	Agent<E>[][] getAgents();
 
 	String toString();
 	

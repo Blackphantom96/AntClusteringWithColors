@@ -5,7 +5,7 @@ import java.util.*;
 import Model.Abstraction.*;
 import Model.Impl.CoreFactoryCreator;
 
-public class ColorAgent implements Agent {
+public class ColorAgent implements Agent<int[]> {
 
 	private Random rand = new Random();
 	private int posX, posY;
@@ -72,7 +72,7 @@ public class ColorAgent implements Agent {
 	}
 
 	@Override
-	public void setParticle(Particle<?> tempParticle) {
+	public void setParticle(Particle<int[]> tempParticle) {
 		particle = (ColorParticle) tempParticle;
 	}
 }
