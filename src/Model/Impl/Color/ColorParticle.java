@@ -51,7 +51,7 @@ public class ColorParticle implements Particle<int[]> {
 	}
 
 	@Override
-	public double euclideanDistance(Particle<int[]> p) {
+	public double distance(Particle<int[]> p) {
 		int sum1 = 0;
 		for (int i = 0; i < 3; i++)
 			sum1 += Math.pow(properties[i] - p.getProperties()[i], 2);

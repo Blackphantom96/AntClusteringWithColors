@@ -42,7 +42,7 @@ public class ColorFunction implements Function<int[]> {
 					ColorParticle tempParticle = (ColorParticle) CoreFactoryCreator.getFactory().getInstance()
 							.getParticles()[i][j];
 					if (tempParticle != null) {
-						sum += 1.0 - (p.euclideanDistance(tempParticle) / alpha);
+						sum += 1.0 - (p.distance(tempParticle) / alpha);
 					}
 				}
 			}

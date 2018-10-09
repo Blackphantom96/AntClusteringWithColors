@@ -3,7 +3,7 @@ package Model.Abstraction;
 public interface Particle<E> {
 	E getProperties();
 
-	double euclideanDistance(Particle<E> p);
+	double distance(Particle<E> p);
 
 	int getPosX();
 

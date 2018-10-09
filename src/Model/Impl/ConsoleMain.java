@@ -164,7 +164,7 @@ public class ConsoleMain {
 				if (j1 != j && i1 != i && a.getParticles()[i][j] != null) {
 					Particle<int[]> par = a.getParticles()[i][j];
 					double euclidenanDistance = Math.sqrt((j1 - j) * (j1 - j) + (i1 - i) * (i1 - i));
-					sum += (1.0 / par.euclideanDistance(p)) * (1.0 / euclidenanDistance);
+					sum += (1.0 / par.distance(p)) * (1.0 / euclidenanDistance);
 				}
 		}
 		return sum;
