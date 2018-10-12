@@ -80,7 +80,7 @@ public class Main extends JFrame {
 		k1 = new JTextField("0.5");
 		k2 = new JTextField("0.7");
 		radio = new JTextField("3");
-		alpha = new JTextField("442.0");
+		alpha = new JTextField("50.0");
 		gridSize = new JTextField("100");
 		gridSizeY = new JTextField("100");
 		scala = new JTextField("3");

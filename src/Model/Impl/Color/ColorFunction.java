@@ -18,7 +18,7 @@ public class ColorFunction implements Function<int[]> {
 	public int probDeposit(int x, int y, Particle<int[]> p) { // Eq 5.15
 		double fx = itemAverageSimilarity(y, x, CoreFactoryCreator.getFactory().getInstance().getRadio(), p);
 		double k2 = CoreFactoryCreator.getFactory().getInstance().getK2();
-		return (int) ((fx < k2 ? 2.0 * fx : 1.0) * 100.0);
+		return (int) ((fx < k2 ? 2*fx : 1.0) * 100.0);
 	}
 
 	@Override
@@ -38,11 +38,14 @@ public class ColorFunction implements Function<int[]> {
 		double sum = 0.0;
 		for (int i = x - r; i <= x + r; i++) {
 			for (int j = y - r; j <= y + r; j++) {
-				if (0 <= i && i < maxX && 0 <= j && j < maxY) {
+				if (0 <= i && i < maxX && 0 <= j && j < maxY && x!=i && y!=j) {
 					ColorParticle tempParticle = (ColorParticle) CoreFactoryCreator.getFactory().getInstance()
 							.getParticles()[i][j];
+					Particle[][] xxxx = CoreFactoryCreator.getFactory().getInstance()
+							.getParticles();
 					if (tempParticle != null) {
-						sum += 1.0 - (p.distance(tempParticle) / alpha);
+						double distances = p.distance(tempParticle) ;
+						sum += 1.0 - (distances/ alpha);
 					}
 				}
 			}

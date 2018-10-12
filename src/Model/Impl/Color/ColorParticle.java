@@ -4,6 +4,7 @@ import java.util.*;
 
 import Model.Abstraction.*;
 import Model.Impl.CoreFactoryCreator;
+import utiles.LAB;
 
 public class ColorParticle implements Particle<int[]> {
 
@@ -53,9 +54,10 @@ public class ColorParticle implements Particle<int[]> {
 	@Override
 	public double distance(Particle<int[]> p) {
 		int sum1 = 0;
-		for (int i = 0; i < 3; i++)
-			sum1 += Math.pow(properties[i] - p.getProperties()[i], 2);
-		return Math.sqrt(sum1);
+		LAB lab1 = LAB.fromRGB(properties[0], properties[1], properties[2], 1);
+		LAB lab2 = LAB.fromRGB(p.getProperties()[0], p.getProperties()[1], p.getProperties()[2], 1);
+		System.err.println(LAB.ciede2000(lab1, lab2));
+		return LAB.ciede2000(lab1, lab2);
 	}
 
 	@Override
@@ -69,4 +71,5 @@ public class ColorParticle implements Particle<int[]> {
 		else
 			return "C";
 	}
+	
 }
