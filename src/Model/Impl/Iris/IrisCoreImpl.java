@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-public class IrisCoreImpl implements Core<int[]> {
+public class IrisCoreImpl implements Core<double[]> {
 
     private IrisPopulation population;
     private final double k1;
@@ -23,7 +23,7 @@ public class IrisCoreImpl implements Core<int[]> {
     private final int particleSize;
     private final double alpha;
     private Random rand = new Random();
-    private Particle<int[]>[][] grid;
+    private Particle<double[]>[][] grid;
 
 
     public IrisCoreImpl(int population, int particles, double k1, double k2, int sizeX, int sizeY, int r, double alpha) {
@@ -49,12 +49,12 @@ public class IrisCoreImpl implements Core<int[]> {
     }
 
     @Override
-    public Population<int[]> getPopulation() {
+    public Population<double[]> getPopulation() {
         return population;
     }
 
     @Override
-    public Particle<int[]>[][] getParticles() {
+    public Particle<double[]>[][] getParticles() {
         return new Particle[0][];
     }
 
@@ -89,12 +89,16 @@ public class IrisCoreImpl implements Core<int[]> {
             BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/data/iris.csv"));
             int particleSizeCopy = particleSize;
             grid = new IrisParticle[sizeX][sizeY];
-            while (!br.readLine().equals("")){
-                StringTokenizer st = new StringTokenizer(br.readLine());
+            while (br.readLine()!=null){
+                StringTokenizer st = new StringTokenizer(br.readLine(),",");
                 int x=rand.nextInt(sizeX);
                 int y=rand.nextInt(sizeY);
                 if(grid[x][y]==null)
-                    grid[x][y]=new IrisParticle(); //TODO poner los parametros que se leen en el st
+                    grid[x][y]=new IrisParticle(Double.parseDouble(st.nextToken()),
+                            Double.parseDouble(st.nextToken()),
+                            Double.parseDouble(st.nextToken()),
+                            Double.parseDouble(st.nextToken()),
+                            st.nextToken());
             }
         } catch (IOException e) {
             throw new NullPointerException("No se encuentran los datos");
@@ -109,6 +113,10 @@ public class IrisCoreImpl implements Core<int[]> {
 
     @Override
     public void createPopulation() {
-        population = new IrisPopulation();
+        try {
+            population = new IrisPopulation(populationSize);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -12,22 +12,24 @@ public class IrisParticle implements Particle<double[]> { // TODO: anzola
     private int posX, posY;
     private static Random rand = new Random();
     private double[] properties;
+    private String tipo;
 
 
     public IrisParticle() {
-        this(
+        this(   rand.nextDouble() * MAX_DEPTH,
                 rand.nextDouble() * MAX_DEPTH,
                 rand.nextDouble() * MAX_DEPTH,
                 rand.nextDouble() * MAX_DEPTH,
-                rand.nextDouble() * MAX_DEPTH); // TODO revisar
+                "Random"); // TODO revisar
     }
 
-    public IrisParticle(double a, double b, double c, double d) {
+    public IrisParticle(double a, double b, double c, double d,String tipo) {
         int maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
         int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
         posX = rand.nextInt(maxX);
         posY = rand.nextInt(maxY);
         properties = new double[]{a, b, c, d};
+        this.tipo = tipo;
     }
 
 
