@@ -87,7 +87,7 @@ public class ColorCoreImpl implements Core<int[]> {
 	@Override
 	public void generateParticleMatrix() {
 		int particleSizeCopy = particleSize; 
-		grid =new ColorParticle[sizeX][sizeY]; 
+		grid =new ColorParticle[sizeX][sizeY];
 		while(particleSizeCopy!=0) {
 			int x=rand.nextInt(sizeX);
 			int y=rand.nextInt(sizeY);

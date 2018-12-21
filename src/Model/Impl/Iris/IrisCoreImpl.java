@@ -4,7 +4,12 @@ import Model.Abstraction.Core;
 import Model.Abstraction.Particle;
 import Model.Abstraction.Population;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Random;
+import java.util.StringTokenizer;
 
 public class IrisCoreImpl implements Core<int[]> {
 
@@ -80,6 +85,20 @@ public class IrisCoreImpl implements Core<int[]> {
 
     @Override
     public void generateParticleMatrix() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/data/iris.csv"));
+            int particleSizeCopy = particleSize;
+            grid = new IrisParticle[sizeX][sizeY];
+            while (!br.readLine().equals("")){
+                StringTokenizer st = new StringTokenizer(br.readLine());
+                int x=rand.nextInt(sizeX);
+                int y=rand.nextInt(sizeY);
+                if(grid[x][y]==null)
+                    grid[x][y]=new IrisParticle(); //TODO poner los parametros que se leen en el st
+            }
+        } catch (IOException e) {
+            throw new NullPointerException("No se encuentran los datos");
+        }
 
     }
 
@@ -90,6 +109,6 @@ public class IrisCoreImpl implements Core<int[]> {
 
     @Override
     public void createPopulation() {
-
+        population = new IrisPopulation();
     }
 }
