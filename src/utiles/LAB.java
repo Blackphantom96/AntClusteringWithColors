@@ -1,5 +1,7 @@
 package utiles;
 
+import java.awt.*;
+
 public class LAB
 {
 	public double L;
@@ -80,7 +82,11 @@ public class LAB
 		  int ib = (int)Math.round(255*b); ib = Math.max(0, Math.min(ib, 255));
 		  return (0xFF0000 & (ir << 16)) | (0x00FF00 & (ig << 8)) | (0xFF & ib);
 	}
-	
+
+	public Color toRGB(){
+		int rgb = rgb();
+		return new Color((0xFF & (rgb >> 16)),(0xFF & (rgb >> 8)),(0xFF & (rgb)));
+	}
 	public String hex() {
 		int rgb = this.rgb();
 		int r = (0xFF & (rgb >> 16));

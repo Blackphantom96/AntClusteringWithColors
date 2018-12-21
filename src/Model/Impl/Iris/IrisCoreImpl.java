@@ -55,7 +55,7 @@ public class IrisCoreImpl implements Core<double[]> {
 
     @Override
     public Particle<double[]>[][] getParticles() {
-        return new Particle[0][];
+        return grid;
     }
 
     @Override

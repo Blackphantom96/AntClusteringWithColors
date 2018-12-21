@@ -22,13 +22,13 @@ public class IrisFunction implements Function<double[]> {
     }
 
     @Override
-    public double itemAverageSimilarity(int x, int y, int r, Particle<double[]> p) {
+    public double itemPerceivedFraction(int x, int y, int r, Particle<double[]> p) {
         System.out.println("Esta funcion no debe llamarse");
         return 0.0;
     }
 
     @Override
-    public double itemPerceivedFraction(int x, int y, int r, Particle<double[]> p) {
+    public double itemAverageSimilarity(int x, int y, int r, Particle<double[]> p) {
         int maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
         int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
         double alpha = CoreFactoryCreator.getFactory().getInstance().getAlpha();

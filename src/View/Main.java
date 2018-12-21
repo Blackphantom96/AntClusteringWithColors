@@ -90,9 +90,9 @@ public class Main extends JFrame {
 		form.add(particles);
 		form.add(new JLabel("Population:"));
 		form.add(population);
-		form.add(new JLabel("k1:"));
+		form.add(new JLabel("k1(Pick):"));
 		form.add(k1);
-		form.add(new JLabel("k2:"));
+		form.add(new JLabel("k2(Drop):"));
 		form.add(k2);
 		form.add(new JLabel("Radio:"));
 		form.add(radio);

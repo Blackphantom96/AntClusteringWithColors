@@ -13,14 +13,14 @@ public class IrisAgent implements Agent<double[]> { // TODO: anzola
     private int maxX, maxY;
     private Particle particle;
 
-    IrisAgent(int x, int y) {
+    public IrisAgent(int x, int y) {
         this.maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
         this.maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
         this.posX = x;
         this.posY = y;
     }
 
-    IrisAgent() {
+    public IrisAgent() {
         this(0,0);
     }
 

@@ -12,23 +12,28 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import Model.Abstraction.Agent;
+import Model.Abstraction.Core;
+import Model.Abstraction.Function;
 import Model.Abstraction.Particle;
 import Model.Impl.CoreFactoryCreator;
-import Model.Impl.Color.ColorAgent;
-import Model.Impl.Color.ColorCoreImpl;
-import Model.Impl.Color.ColorFunction;
-import Model.Impl.Color.ColorParticle;
+import Model.Impl.Iris.IrisAgent;
+import Model.Impl.Iris.IrisFunction;
+import Model.Impl.Iris.IrisParticle;
+import utiles.LAB;
 
 public class Drawer extends JPanel implements KeyListener, ActionListener {
 	private Timer time = new Timer(1, this);
-
+	private static final Color SETOSA = Color.BLUE;
+	private static final Color VERSICOLOR = Color.GREEN;
+	private static final Color VIRGINICA = Color.RED;
+	private boolean flagRealColor = true;
 	// public static Objetive ob = new Objetive();
 	public static int mutation;
 	public static int pobla;
 	public int count = 0;
 	// public Population pop;
-	private ColorCoreImpl core;
-	private ColorFunction functions = new ColorFunction();
+	private Core core;
+	private Function functions = new IrisFunction();
 	private boolean flag;
 	private double scale;
 	private int cicles;
@@ -38,7 +43,7 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 
 	public Drawer(int population, int particles, double k1, double k2, int gridX, int gridY, int radio, double alpha,
 			double scale, int cicles) {
-		core = (ColorCoreImpl) CoreFactoryCreator.getFactory().createInstance(population, particles, k1, k2, gridX,
+		core = CoreFactoryCreator.getFactory().createInstance(population, particles, k1, k2, gridX,
 				gridY, radio, alpha);
 		core.createPopulation();
 		core.generateParticleMatrix();
@@ -48,6 +53,9 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 		maxX = core.getMaxX();
 		maxY = core.getMaxY();
 		rand = new Random();
+		addKeyListener(this);
+		setFocusable(true);
+		setFocusTraversalKeysEnabled(false);
 		time.start();
 	}
 
@@ -61,8 +69,25 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 			for (int j = 0; j < maxX; j++) {
 				Particle<?> q = temp[i][j];
 				if (q != null) {
-					int[] prop = (int[]) q.getProperties();
-					g.setColor(new Color(prop[0], prop[1], prop[2]));
+					double[] prop = (double[]) q.getProperties();
+					Color res = Color.BLACK;
+					if(flagRealColor){
+						LAB lab = new LAB(50.0,(prop[0]*prop[1]*256.0/30.0)-128,(prop[2]*prop[3]*256.0/6.0)-128);
+						res = lab.toRGB();
+					}else{
+						switch (q.toString()){
+							case "Iris-setosa":
+								res = SETOSA;
+								break;
+							case "Iris-versicolor":
+								res = VERSICOLOR;
+								break;
+							case "Iris-virginica":
+								res = VIRGINICA;
+								break;
+						}
+					}
+					g.setColor(res);
 					g.drawOval(i, j, core.getRadio(), core.getRadio());
 				}
 			}
@@ -73,8 +98,11 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 			for (Agent q : p) {
 				if (q != null) {
 					if (q.hasPayload()) {
-						int[] prop = (int[]) q.getParticle().getProperties();
-						g.setColor(new Color(prop[0], prop[1], prop[2], 100));
+						if(flagRealColor) {
+							double[] prop = (double[]) q.getParticle().getProperties();
+							LAB lab = new LAB(50.0, prop[0] * prop[1], prop[2] * prop[3]);
+							g.setColor(lab.toRGB());
+						}
 					} else {
 						g.setColor(Color.BLACK);
 					}
@@ -105,7 +133,9 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+		if(e.getKeyChar()==' '){
+			flagRealColor = !flagRealColor;
+		}
 
 	}
 
@@ -122,8 +152,8 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 
 		for (int i = 0; i < maxX; i++) {
 			for (int j = 0; j < maxY; j++) {
-				ColorAgent tempAgent = (ColorAgent) core.getPopulation().getAgents()[i][j];
-				ColorParticle tempParticle = (ColorParticle) core.getParticles()[i][j];
+				IrisAgent tempAgent = (IrisAgent) core.getPopulation().getAgents()[i][j];
+				IrisParticle tempParticle = (IrisParticle) core.getParticles()[i][j];
 				if (tempAgent != null) {
 					if (!tempAgent.hasPayload() && tempParticle != null) {
 						int pp = functions.probPick(i, j, tempParticle);

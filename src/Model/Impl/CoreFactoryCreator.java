@@ -2,6 +2,7 @@ package Model.Impl;
 
 import Model.Abstraction.Factory.CoreFactory;
 import Model.Impl.Color.Factory.ColorCoreImplFactory;
+import Model.Impl.Iris.Factory.IrisCoreImplFactory;
 
 public class CoreFactoryCreator {
 
@@ -9,7 +10,7 @@ public class CoreFactoryCreator {
 
 	public static CoreFactory getFactory() {
 		if (factoryInstance == null) {
-			factoryInstance = new ColorCoreImplFactory();
+			factoryInstance = new IrisCoreImplFactory();
 		}
 		return factoryInstance;
 	}
