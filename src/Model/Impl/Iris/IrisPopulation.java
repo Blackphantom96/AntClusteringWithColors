@@ -1,16 +1,9 @@
 package Model.Impl.Iris;
 
-import Model.Abstraction.Agent;
 import Model.Abstraction.Population;
 
-public class IrisPopulation implements Population<int[]> {
-    @Override
-    public void move(int i, int j) {
-
-    }
-
-    @Override
-    public Agent<int[]>[][] getAgents() {
-        return new Agent[0][];
+public class IrisPopulation extends Population<int[]> { // TODO: anzola
+    public IrisPopulation(int population) throws Exception {
+        super(IrisAgent.class, population);
     }
 }

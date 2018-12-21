@@ -100,7 +100,10 @@ public class ColorCoreImpl implements Core<int[]> {
 
 	@Override
 	public void createPopulation() {
-		population = new ColorPopulation(populationSize);
-		
+		try {
+			population = new ColorPopulation(populationSize);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

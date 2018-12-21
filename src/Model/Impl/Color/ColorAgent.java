@@ -12,6 +12,11 @@ public class ColorAgent implements Agent<int[]> {
 	private int maxX, maxY;
 	private ColorParticle particle;
 
+	public ColorAgent() {
+		this(0, 0);
+	}
+
+
 	public ColorAgent(int x, int y) {
 		this.maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
 		this.maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
