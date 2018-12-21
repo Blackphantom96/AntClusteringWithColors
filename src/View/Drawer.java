@@ -72,7 +72,7 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 					double[] prop = (double[]) q.getProperties();
 					Color res = Color.BLACK;
 					if(flagRealColor){
-						LAB lab = new LAB(50.0,(prop[0]*prop[1]*256.0/30.0)-128,(prop[2]*prop[3]*256.0/6.0)-128);
+						LAB lab = new LAB((prop[0]*prop[1]*256.0/30.0)-128,(prop[3]*100/2.5),(prop[2]*prop[3]*256.0/6.0)-128);
 						res = lab.toRGB();
 					}else{
 						switch (q.toString()){

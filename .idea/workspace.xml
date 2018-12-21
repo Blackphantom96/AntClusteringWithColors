@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1e917e50-a463-4561-9c99-07bdafc732ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/CoreFactoryCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/CoreFactoryCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisCoreImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisCoreImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisParticle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Drawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utiles/LAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utiles/LAB.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,37 +26,49 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="5" />
-          <entry key="java" value="76" />
+          <entry key="java" value="77" />
           <entry key="kt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSV" value="4" />
-          <entry key="JAVA" value="76" />
+          <entry key="JAVA" value="77" />
           <entry key="Kotlin" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1997" />
+          <entry key="java" value="2040" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1997" />
+          <entry key="JAVA" value="2040" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Impl/Iris/IrisParticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="49" column="96" selection-start-line="49" selection-start-column="96" selection-end-line="49" selection-end-column="96" />
+            <state relative-caret-position="284">
+              <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/Drawer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="74" column="75" lean-forward="true" selection-start-line="74" selection-start-column="75" selection-end-line="74" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,9 +90,11 @@
     <findStrings>
       <find>Color</find>
       <find>rgb</find>
+      <find>q.getProperties()</find>
     </findStrings>
     <replaceStrings>
       <replace>Iris</replace>
+      <replace>prop</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -105,9 +113,9 @@
         <option value="$PROJECT_DIR$/src/Model/Impl/Iris/IrisCoreImpl.java" />
         <option value="$PROJECT_DIR$/src/utiles/LAB.java" />
         <option value="$PROJECT_DIR$/src/Model/Impl/Iris/IrisFunction.java" />
-        <option value="$PROJECT_DIR$/src/View/Drawer.java" />
         <option value="$PROJECT_DIR$/src/View/Main.java" />
         <option value="$PROJECT_DIR$/src/Model/Impl/Iris/IrisParticle.java" />
+        <option value="$PROJECT_DIR$/src/View/Drawer.java" />
       </list>
     </option>
   </component>
@@ -324,12 +332,12 @@
       <option name="presentableId" value="Default" />
       <updated>1545354486150</updated>
       <workItem from="1545354487845" duration="2079000" />
-      <workItem from="1545356617424" duration="12464000" />
+      <workItem from="1545356617424" duration="13903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14543000" />
+    <option name="totallyTimeSpent" value="15982000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -566,16 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Drawer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="74" column="111" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="111" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -600,8 +598,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Impl/Iris/IrisParticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="49" column="96" selection-start-line="49" selection-start-column="96" selection-end-line="49" selection-end-column="96" />
+        <state relative-caret-position="284">
+          <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Drawer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="74" column="75" lean-forward="true" selection-start-line="74" selection-start-column="75" selection-end-line="74" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
