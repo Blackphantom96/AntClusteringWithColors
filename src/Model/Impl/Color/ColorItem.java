@@ -5,6 +5,7 @@ import java.util.*;
 import Model.Abstraction.*;
 import Model.Impl.CoreFactoryCreator;
 import utiles.LAB;
+import de.lmu.ifi.dbs.elki.*;
 
 public class ColorItem implements Item<int[]> {
 

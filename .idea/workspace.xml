@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="052de43a-00ec-4988-89db-08b9c59abb4b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/elki_bundle_0_7_2_SNAPSHOT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LaTEX/test-configurations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/LaTEX/test-configurations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Abstraction/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Abstraction/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Abstraction/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Abstraction/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Abstraction/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Abstraction/Function.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Abstraction/Particle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Abstraction/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Abstraction/Population.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Abstraction/Colony.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Color/ColorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Color/ColorAnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Color/ColorCoreImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Color/ColorCoreImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Color/ColorFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Color/ColorFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Color/ColorParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Color/ColorItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Color/ColorPopulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Color/ColorColony.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/ConsoleMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/ConsoleMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisAnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisCoreImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisCoreImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisPopulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisColony.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Drawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntClusteringWithColors.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AntClusteringWithColors.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Color/ColorItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Color/ColorItem.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,30 +25,94 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="17" />
+          <entry key="java" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="JAVA" value="22" />
           <entry key="PLAIN_TEXT" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="java" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="9" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="30" selection-start-line="30" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Abstraction/Function.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-78">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorFunction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-12">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorAnt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorCoreImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-52">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Model/Impl/Color/ColorItem.java" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -156,6 +203,11 @@
             <path>
               <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
               <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -163,13 +215,6 @@
               <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Abstraction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
@@ -177,6 +222,29 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+              <item name="Color" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
+              <item name="elki-bundle-0.7.2-SNAPSHOT.jar" type="ab9368bb:PsiFileNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
+              <item name="elki-bundle-0.7.2-SNAPSHOT.jar" type="ab9368bb:PsiFileNode" />
+              <item name="elki" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -191,6 +259,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="Debugger_Data_Views_Java" />
   </component>
   <component name="RunDashboard">
@@ -232,29 +303,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546736238231</updated>
-      <workItem from="1546736245012" duration="923000" />
+      <workItem from="1546736245012" duration="2178000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="923000" />
+    <option name="totallyTimeSpent" value="2178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20314735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32769832" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32899868" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -290,12 +363,133 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Impl/ConsoleMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="30" selection-start-line="30" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Abstraction/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorCoreImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorAnt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>AntClusteringWithColors</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>elki-bundle-0.7.2-SNAPSHOT</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
