@@ -1,11 +1,11 @@
 package Model.Abstraction;
 
 public interface Function<E> {
-	int probPick(int x, int y, Particle<E> p);
+	int probPick(int x, int y, Item<E> p);
 
-	int probDeposit(int x, int y, Particle<E> p);
+	int probDeposit(int x, int y, Item<E> p);
 
-	double itemAverageSimilarity(int x, int y, int r, Particle<E> p);
+	double itemAverageSimilarity(int x, int y, int r, Item<E> p);
 	
 	/**
 	 * La forma de solucionar depende del problema a tratar (Ref pag 228)
@@ -15,5 +15,5 @@ public interface Function<E> {
 	 * @param p particula
 	 * @return fraccion de percepcion de la particula p
 	 */
-	double itemPerceivedFraction(int x, int y, int r, Particle<E> p);
+	double itemPerceivedFraction(int x, int y, int r, Item<E> p);
 }

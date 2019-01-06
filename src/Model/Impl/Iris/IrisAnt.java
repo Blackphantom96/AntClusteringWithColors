@@ -1,26 +1,26 @@
 package Model.Impl.Iris;
 
-import Model.Abstraction.Agent;
-import Model.Abstraction.Particle;
+import Model.Abstraction.Ant;
+import Model.Abstraction.Item;
 import Model.Impl.CoreFactoryCreator;
 
 import java.util.Random;
 
-public class IrisAgent implements Agent<double[]> { // TODO: anzola
+public class IrisAnt implements Ant<double[]> { // TODO: anzola
 
     private Random rand = new Random();
     private int posX, posY;
     private int maxX, maxY;
-    private Particle particle;
+    private Item item;
 
-    public IrisAgent(int x, int y) {
+    public IrisAnt(int x, int y) {
         this.maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
         this.maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
         this.posX = x;
         this.posY = y;
     }
 
-    public IrisAgent() {
+    public IrisAnt() {
         this(0,0);
     }
 
@@ -52,13 +52,13 @@ public class IrisAgent implements Agent<double[]> { // TODO: anzola
     }
 
     @Override
-    public Particle<double[]> getParticle() {
-        return particle;
+    public Item<double[]> getItem() {
+        return item;
     }
 
     @Override
     public boolean hasPayload() {
-        return particle != null;
+        return item != null;
     }
 
     @Override
@@ -72,8 +72,8 @@ public class IrisAgent implements Agent<double[]> { // TODO: anzola
     }
 
     @Override
-    public void setParticle(Particle<double[]> tempParticle) {
-        particle = tempParticle;
+    public void setItem(Item<double[]> tempItem) {
+        item = tempItem;
 
     }
 }

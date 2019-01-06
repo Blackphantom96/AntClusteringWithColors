@@ -3,12 +3,12 @@ package Model.Impl.Color;
 import java.util.*;
 
 import Model.Abstraction.Core;
-import Model.Abstraction.Particle;
+import Model.Abstraction.Item;
 
 public class ColorCoreImpl implements Core<int[]> {
 
-	private ColorPopulation population;
-	///private final List<Particle<int[]>> particles; // XXX toca mirar Juan: que es eso ¿?
+	private ColorColony population;
+	///private final List<Item<int[]>> particles; // XXX toca mirar Juan: que es eso ¿?
 	private final double k1;
 	private final double k2;
 	private final int sizeX;
@@ -18,7 +18,7 @@ public class ColorCoreImpl implements Core<int[]> {
 	private final int particleSize;
 	private final double alpha;
 	private Random rand = new Random();
-	private Particle<int[]>[][] grid;
+	private Item<int[]>[][] grid;
 	
 
 	public ColorCoreImpl(int population, int particles, double k1, double k2, int sizeX, int sizeY, int r, double alpha) {
@@ -50,12 +50,12 @@ public class ColorCoreImpl implements Core<int[]> {
 	}
 
 	@Override
-	public ColorPopulation getPopulation() {
+	public ColorColony getPopulation() {
 		return population;
 	}
 
 	@Override
-	public Particle<int[]>[][] getParticles() {
+	public Item<int[]>[][] getParticles() {
 		return grid; // TODO terminar
 	}
 
@@ -87,12 +87,12 @@ public class ColorCoreImpl implements Core<int[]> {
 	@Override
 	public void generateParticleMatrix() {
 		int particleSizeCopy = particleSize; 
-		grid =new ColorParticle[sizeX][sizeY];
+		grid =new ColorItem[sizeX][sizeY];
 		while(particleSizeCopy!=0) {
 			int x=rand.nextInt(sizeX);
 			int y=rand.nextInt(sizeY);
 			if(grid[x][y]==null) {
-				grid[x][y]=new ColorParticle();
+				grid[x][y]=new ColorItem();
 				particleSizeCopy--;
 			}
 		}
@@ -101,7 +101,7 @@ public class ColorCoreImpl implements Core<int[]> {
 	@Override
 	public void createPopulation() {
 		try {
-			population = new ColorPopulation(populationSize);
+			population = new ColorColony(populationSize);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

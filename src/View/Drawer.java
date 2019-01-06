@@ -11,14 +11,14 @@ import java.util.Random;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import Model.Abstraction.Agent;
+import Model.Abstraction.Ant;
 import Model.Abstraction.Core;
 import Model.Abstraction.Function;
-import Model.Abstraction.Particle;
+import Model.Abstraction.Item;
 import Model.Impl.CoreFactoryCreator;
-import Model.Impl.Iris.IrisAgent;
+import Model.Impl.Iris.IrisAnt;
 import Model.Impl.Iris.IrisFunction;
-import Model.Impl.Iris.IrisParticle;
+import Model.Impl.Iris.IrisItem;
 import utiles.LAB;
 
 public class Drawer extends JPanel implements KeyListener, ActionListener {
@@ -31,7 +31,7 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 	public static int mutation;
 	public static int pobla;
 	public int count = 0;
-	// public Population pop;
+	// public Colony pop;
 	private Core core;
 	private Function functions = new IrisFunction();
 	private boolean flag;
@@ -64,15 +64,15 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 		h.scale(scale, scale);
 		setBackground(Color.white);
 		super.paintComponent(g);
-		Particle[][] temp = core.getParticles();
+		Item[][] temp = core.getParticles();
 		for (int i = 0; i < maxX; i++) {
 			for (int j = 0; j < maxX; j++) {
-				Particle<?> q = temp[i][j];
+				Item<?> q = temp[i][j];
 				if (q != null) {
 					double[] prop = (double[]) q.getProperties();
 					Color res = Color.BLACK;
 					if(flagRealColor){
-						LAB lab = new LAB((prop[0]*prop[1]*256.0/30.0)-128,(prop[3]*100/2.5),(prop[2]*prop[3]*256.0/6.0)-128);
+						LAB lab = new LAB(50,(prop[3]*256.0/2.5)-128,(prop[2]*256.0/7.0)-128);
 						res = lab.toRGB();
 					}else{
 						switch (q.toString()){
@@ -93,13 +93,13 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 			}
 		}
 		g.setColor(Color.BLACK);
-		Agent[][] temp1 = core.getPopulation().getAgents();
-		for (Agent[] p : temp1) {
-			for (Agent q : p) {
+		Ant[][] temp1 = core.getPopulation().getAnts();
+		for (Ant[] p : temp1) {
+			for (Ant q : p) {
 				if (q != null) {
 					if (q.hasPayload()) {
 						if(flagRealColor) {
-							double[] prop = (double[]) q.getParticle().getProperties();
+							double[] prop = (double[]) q.getItem().getProperties();
 							LAB lab = new LAB(50.0, prop[0] * prop[1], prop[2] * prop[3]);
 							g.setColor(lab.toRGB());
 						}
@@ -112,7 +112,7 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 			}
 		}
 		// g.drawString("Mutation: " + mutation + "%", 0, 410);
-		// g.drawString("Population: " + pobla, 0, 425);
+		// g.drawString("Colony: " + pobla, 0, 425);
 		// g.drawString("Generation: " + pop.generation, 0, 440);
 		// g.drawString("Cicles: " + (cicles - count), 0, 455);
 		// g.drawString("Max fitness: " + pop.maxFitness, 0, 470);
@@ -144,29 +144,29 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 		if (cicles != 0)
 			repaint();
 		// System.out.println(a.getPopulation().toString());
-		// for (Particle<int[]>[] p : a.getParticles()) {
-		// for (Particle<int[]> q : p)
+		// for (Item<int[]>[] p : a.getParticles()) {
+		// for (Item<int[]> q : p)
 		// System.out.print(q != null ? q : ".");
 		// System.out.println();
 		// }
 
 		for (int i = 0; i < maxX; i++) {
 			for (int j = 0; j < maxY; j++) {
-				IrisAgent tempAgent = (IrisAgent) core.getPopulation().getAgents()[i][j];
-				IrisParticle tempParticle = (IrisParticle) core.getParticles()[i][j];
+				IrisAnt tempAgent = (IrisAnt) core.getPopulation().getAnts()[i][j];
+				IrisItem tempParticle = (IrisItem) core.getParticles()[i][j];
 				if (tempAgent != null) {
 					if (!tempAgent.hasPayload() && tempParticle != null) {
 						int pp = functions.probPick(i, j, tempParticle);
 						if (rand.nextInt(100) + 1 < pp) {
-							tempAgent.setParticle(tempParticle);
+							tempAgent.setItem(tempParticle);
 							core.getParticles()[i][j] = null;
 						}
 					} else if (tempAgent.hasPayload() && tempParticle == null) {
-						int pd = functions.probDeposit(i, j, tempAgent.getParticle());
+						int pd = functions.probDeposit(i, j, tempAgent.getItem());
 						// System.out.println(pd);
 						if (rand.nextInt(100) + 1 < pd) {
-							core.getParticles()[i][j] = tempAgent.getParticle();
-							tempAgent.setParticle(null);
+							core.getParticles()[i][j] = tempAgent.getItem();
+							tempAgent.setItem(null);
 						}
 					}
 				}

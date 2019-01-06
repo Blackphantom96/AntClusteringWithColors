@@ -1,11 +1,10 @@
 package Model.Impl.Iris;
 
+import Model.Abstraction.Colony;
 import Model.Abstraction.Core;
-import Model.Abstraction.Particle;
-import Model.Abstraction.Population;
+import Model.Abstraction.Item;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
@@ -13,7 +12,7 @@ import java.util.StringTokenizer;
 
 public class IrisCoreImpl implements Core<double[]> {
 
-    private IrisPopulation population;
+    private IrisColony population;
     private final double k1;
     private final double k2;
     private final int sizeX;
@@ -23,7 +22,7 @@ public class IrisCoreImpl implements Core<double[]> {
     private final int particleSize;
     private final double alpha;
     private Random rand = new Random();
-    private Particle<double[]>[][] grid;
+    private Item<double[]>[][] grid;
 
 
     public IrisCoreImpl(int population, int particles, double k1, double k2, int sizeX, int sizeY, int r, double alpha) {
@@ -49,12 +48,12 @@ public class IrisCoreImpl implements Core<double[]> {
     }
 
     @Override
-    public Population<double[]> getPopulation() {
+    public Colony<double[]> getPopulation() {
         return population;
     }
 
     @Override
-    public Particle<double[]>[][] getParticles() {
+    public Item<double[]>[][] getParticles() {
         return grid;
     }
 
@@ -88,13 +87,13 @@ public class IrisCoreImpl implements Core<double[]> {
         try {
             BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/data/iris.csv"));
             int particleSizeCopy = particleSize;
-            grid = new IrisParticle[sizeX][sizeY];
+            grid = new IrisItem[sizeX][sizeY];
             while (br.readLine()!=null){
                 StringTokenizer st = new StringTokenizer(br.readLine(),",");
                 int x=rand.nextInt(sizeX);
                 int y=rand.nextInt(sizeY);
                 if(grid[x][y]==null)
-                    grid[x][y]=new IrisParticle(Double.parseDouble(st.nextToken()),
+                    grid[x][y]=new IrisItem(Double.parseDouble(st.nextToken()),
                             Double.parseDouble(st.nextToken()),
                             Double.parseDouble(st.nextToken()),
                             Double.parseDouble(st.nextToken()),
@@ -114,7 +113,7 @@ public class IrisCoreImpl implements Core<double[]> {
     @Override
     public void createPopulation() {
         try {
-            population = new IrisPopulation(populationSize);
+            population = new IrisColony(populationSize);
         } catch (Exception e) {
             e.printStackTrace();
         }

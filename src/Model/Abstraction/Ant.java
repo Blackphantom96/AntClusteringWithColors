@@ -1,7 +1,7 @@
 package Model.Abstraction;
 
 
-public interface Agent<E> {
+public interface Ant<E> {
 	void iterate();
 
 	int[] move();
@@ -10,7 +10,7 @@ public interface Agent<E> {
 
 	int getPosY();
 
-	Particle<E> getParticle();
+	Item<E> getItem();
 
 	public boolean hasPayload();
 	
@@ -18,6 +18,6 @@ public interface Agent<E> {
 	
 	void setPosY(int y);
 
-	void setParticle(Particle<E> tempParticle);
+	void setItem(Item<E> tempItem);
 
 }

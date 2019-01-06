@@ -88,7 +88,7 @@ public class Main extends JFrame {
 
 		form.add(new JLabel("Particles:"));
 		form.add(particles);
-		form.add(new JLabel("Population:"));
+		form.add(new JLabel("Colony:"));
 		form.add(population);
 		form.add(new JLabel("k1(Pick):"));
 		form.add(k1);

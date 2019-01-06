@@ -6,7 +6,7 @@ import Model.Abstraction.*;
 import Model.Impl.CoreFactoryCreator;
 import utiles.LAB;
 
-public class ColorParticle implements Particle<int[]> {
+public class ColorItem implements Item<int[]> {
 
 	private static final int COLOR_DEPTH = 256;
 
@@ -14,11 +14,11 @@ public class ColorParticle implements Particle<int[]> {
 	private static Random rand = new Random();
 	private int[] properties;
 
-	public ColorParticle() {
+	public ColorItem() {
 		this(rand.nextInt(COLOR_DEPTH), rand.nextInt(COLOR_DEPTH), rand.nextInt(COLOR_DEPTH));
 	}
 
-	public ColorParticle(int r, int g, int b) {
+	public ColorItem(int r, int g, int b) {
 		int maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
 		int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
 		posX = rand.nextInt(maxX);
@@ -52,7 +52,7 @@ public class ColorParticle implements Particle<int[]> {
 	}
 
 	@Override
-	public double distance(Particle<int[]> p) {
+	public double distance(Item<int[]> p) {
 		int sum1 = 0;
 		LAB lab1 = LAB.fromRGB(properties[0], properties[1], properties[2], 1);
 		LAB lab2 = LAB.fromRGB(p.getProperties()[0], p.getProperties()[1], p.getProperties()[2], 1);

@@ -5,9 +5,9 @@ public interface Core<E> {
 
 	public int getMaxY();
 
-	public Population<E> getPopulation();
+	public Colony<E> getPopulation();
 
-	public Particle<E>[][] getParticles();
+	public Item<E>[][] getParticles();
 
 	public double getK1();
 

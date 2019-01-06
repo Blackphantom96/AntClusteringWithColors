@@ -1,9 +1,9 @@
 package Model.Abstraction;
 
-public interface Particle<E> {
+public interface Item<E> {
 	E getProperties();
 
-	double distance(Particle<E> p);
+	double distance(Item<E> p);
 
 	int getPosX();
 

@@ -1,12 +1,12 @@
 package Model.Impl.Iris;
 
-import Model.Abstraction.Particle;
+import Model.Abstraction.Item;
 import Model.Impl.CoreFactoryCreator;
 import utiles.LAB;
 
 import java.util.Random;
 
-public class IrisParticle implements Particle<double[]> { // TODO: anzola
+public class IrisItem implements Item<double[]> { // TODO: anzola
 
     private static final double MAX_DEPTH = 10.0; // TODO: revisar
 
@@ -16,7 +16,7 @@ public class IrisParticle implements Particle<double[]> { // TODO: anzola
     private String tipo;
 
 
-    public IrisParticle() {
+    public IrisItem() {
         this(   rand.nextDouble() * MAX_DEPTH,
                 rand.nextDouble() * MAX_DEPTH,
                 rand.nextDouble() * MAX_DEPTH,
@@ -24,7 +24,7 @@ public class IrisParticle implements Particle<double[]> { // TODO: anzola
                 "Random"); // TODO revisar
     }
 
-    public IrisParticle(double a, double b, double c, double d,String tipo) {
+    public IrisItem(double a, double b, double c, double d, String tipo) {
         int maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
         int maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
         posX = rand.nextInt(maxX);
@@ -40,15 +40,16 @@ public class IrisParticle implements Particle<double[]> { // TODO: anzola
     }
 
     @Override
-    public double distance(Particle<double[]> p) {
+    public double distance(Item<double[]> p) {
         double res = 0.0;
         for(int i = 0;i < properties.length;i++){
             res+=(properties[i]-p.getProperties()[i])*(properties[i]-p.getProperties()[i]);
         }
-        LAB lab1 = new LAB(getProperties()[3]*100.0/2.5,(getProperties()[0]*getProperties()[1]*256.0/30.0)-128,
-                (getProperties()[2]*getProperties()[3]*256.0/6.0)-128);
-        LAB lab2 = new LAB(getProperties()[3]*100.0/2.5,(p.getProperties()[0]*p.getProperties()[1]*256.0/30.0)-128,
-                (p.getProperties()[2]*p.getProperties()[3]*256.0/6.0)-128);
+        double[] prop = getProperties();
+        double[] prop2 = getProperties();
+
+        LAB lab1 = new LAB(50,(prop[3]*256.0/2.5)-128,(prop[2]*256.0/7.0)-128);
+        LAB lab2 = new LAB(50,(prop2[3]*256.0/2.5)-128,(prop2[2]*256.0/7.0)-128);
         return LAB.ciede2000(lab1,lab2);
     }
 

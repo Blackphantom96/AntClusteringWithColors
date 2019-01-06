@@ -2,9 +2,9 @@ package Model.Impl;
 
 import java.util.*;
 
-import Model.Abstraction.Agent;
+import Model.Abstraction.Ant;
 import Model.Abstraction.Core;
-import Model.Abstraction.Particle;
+import Model.Abstraction.Item;
 import Model.Impl.Color.*;
 
 public class ConsoleMain {
@@ -81,21 +81,21 @@ public class ConsoleMain {
 
 			for (int i = 0; i < maxX; i++) {
 				for (int j = 0; j < maxY; j++) {
-					ColorAgent tempAgent = (ColorAgent) a.getPopulation().getAgents()[i][j];
-					ColorParticle tempParticle = (ColorParticle) a.getParticles()[i][j];
+					ColorAnt tempAgent = (ColorAnt) a.getPopulation().getAnts()[i][j];
+					ColorItem tempParticle = (ColorItem) a.getParticles()[i][j];
 					if (tempAgent != null) {
 						if (!tempAgent.hasPayload() && tempParticle != null) {
 							int pp = functions.probPick(i, j, tempParticle);
 							if (rand.nextInt(100) + 1 < pp) {
-								tempAgent.setParticle(tempParticle);
+								tempAgent.setItem(tempParticle);
 								a.getParticles()[i][j] = null;
 							}
 						} else if (tempAgent.hasPayload() && tempParticle == null) {
-							int pd = functions.probDeposit(i, j, tempAgent.getParticle());
+							int pd = functions.probDeposit(i, j, tempAgent.getItem());
 							// System.out.println(pd);
 							if (rand.nextInt(100) + 1 < pd) {
-								a.getParticles()[i][j] = tempAgent.getParticle();
-								tempAgent.setParticle(null);
+								a.getParticles()[i][j] = tempAgent.getItem();
+								tempAgent.setItem(null);
 							}
 						}
 					}
@@ -113,8 +113,8 @@ public class ConsoleMain {
 
 	public static void printMatrixStatus(Core<int[]> core) {
 		System.out.println(core.getPopulation().toString());
-		for (Particle<int[]>[] p : core.getParticles()) {
-			for (Particle<int[]> q : p)
+		for (Item<int[]>[] p : core.getParticles()) {
+			for (Item<int[]> q : p)
 				System.out.print(q != null ? q : ".");
 			System.out.println();
 		}
@@ -123,17 +123,17 @@ public class ConsoleMain {
 	public static void printMetrics(Core<int[]> core) { // este metodo NO se debe llamar en medio de la ejecucion
 		List<Double> metricsData = new ArrayList<>();
 
-		for (Agent[] agents : core.getPopulation().getAgents()) {
-			for (Agent agent : agents) {
-				if (agent != null) {
-					int i = agent.getPosX();
-					int j = agent.getPosY();
-					Particle<int[]>[][] particles = core.getParticles();
-					if (particles[i][j] != null) {
+		for (Ant[] ants : core.getPopulation().getAnts()) {
+			for (Ant ant : ants) {
+				if (ant != null) {
+					int i = ant.getPosX();
+					int j = ant.getPosY();
+					Item<int[]>[][] items = core.getParticles();
+					if (items[i][j] != null) {
 						// System.err.println("Oops " + i + " " + j);
-						particles[i][j] = ((Particle<int[]>) agent.getParticle());
+						items[i][j] = ((Item<int[]>) ant.getItem());
 					}
-					agent.setParticle(null);
+					ant.setItem(null);
 				}
 			}
 		}
@@ -141,7 +141,7 @@ public class ConsoleMain {
 		for (int i = 0; i < core.getMaxX(); i++) {
 			for (int j = 0; j < core.getMaxY(); j++)
 				if (core.getParticles()[i][j] != null) {
-					Particle<int[]> par = core.getParticles()[i][j];
+					Item<int[]> par = core.getParticles()[i][j];
 					double metric = calculateMetric(par, i, j);
 					metricsData.add(metric);
 				}
@@ -151,18 +151,18 @@ public class ConsoleMain {
 
 	public static void printMetricFormat(List<Double> values) {
 		int i = 1;
-		System.out.println("Particle Metric");
+		System.out.println("Item Metric");
 		for (Double val : values) {
 			System.out.println(i++ + " " + val);
 		}
 	}
 
-	public static double calculateMetric(Particle<int[]> p, int i1, int j1) {
+	public static double calculateMetric(Item<int[]> p, int i1, int j1) {
 		double sum = 0.0;
 		for (int i = 0; i < a.getMaxX(); i++) {
 			for (int j = 0; j < a.getMaxY(); j++)
 				if (j1 != j && i1 != i && a.getParticles()[i][j] != null) {
-					Particle<int[]> par = a.getParticles()[i][j];
+					Item<int[]> par = a.getParticles()[i][j];
 					double euclidenanDistance = Math.sqrt((j1 - j) * (j1 - j) + (i1 - i) * (i1 - i));
 					sum += (1.0 / par.distance(p)) * (1.0 / euclidenanDistance);
 				}

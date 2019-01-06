@@ -5,19 +5,19 @@ import java.util.*;
 import Model.Abstraction.*;
 import Model.Impl.CoreFactoryCreator;
 
-public class ColorAgent implements Agent<int[]> {
+public class ColorAnt implements Ant<int[]> {
 
 	private Random rand = new Random();
 	private int posX, posY;
 	private int maxX, maxY;
-	private ColorParticle particle;
+	private ColorItem particle;
 
-	public ColorAgent() {
+	public ColorAnt() {
 		this(0, 0);
 	}
 
 
-	public ColorAgent(int x, int y) {
+	public ColorAnt(int x, int y) {
 		this.maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
 		this.maxY = CoreFactoryCreator.getFactory().getInstance().getMaxY();
 		posX = x;
@@ -30,7 +30,7 @@ public class ColorAgent implements Agent<int[]> {
 	}
 
 	@Override
-	public ColorParticle getParticle() {
+	public ColorItem getItem() {
 		return particle;
 	}
 
@@ -77,7 +77,7 @@ public class ColorAgent implements Agent<int[]> {
 	}
 
 	@Override
-	public void setParticle(Particle<int[]> tempParticle) {
-		particle = (ColorParticle) tempParticle;
+	public void setItem(Item<int[]> tempItem) {
+		particle = (ColorItem) tempItem;
 	}
 }

@@ -1,4 +1,4 @@
-population particles k1 k2 sizeX sizeY radio alpha iterations printStatus
+population items k1 k2 sizeX sizeY radio alpha iterations printStatus
 
 data1.dat:
 100 300 0.5 0.7 200 200 4 442.0 100000 false
