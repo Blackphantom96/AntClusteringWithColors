@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="elki-bundle-0.7.2-SNAPSHOT">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/elki-bundle-0.7.2-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
