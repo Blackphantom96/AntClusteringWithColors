@@ -2,7 +2,9 @@ package Model.Impl.Iris;
 
 import Model.Abstraction.Item;
 import Model.Impl.CoreFactoryCreator;
-import utiles.LAB;
+import de.lmu.ifi.dbs.elki.data.DoubleVector;
+import de.lmu.ifi.dbs.elki.distance.distancefunction.minkowski.EuclideanDistanceFunction;
+import utiles.DistanceFunctionCalculator;
 
 import java.util.Random;
 
@@ -41,16 +43,21 @@ public class IrisItem implements Item<double[]> { // TODO: anzola
 
     @Override
     public double distance(Item<double[]> p) {
-        double res = 0.0;
-        for(int i = 0;i < properties.length;i++){
-            res+=(properties[i]-p.getProperties()[i])*(properties[i]-p.getProperties()[i]);
-        }
-        double[] prop = getProperties();
-        double[] prop2 = getProperties();
+//        double res = 0.0;
+//        for(int i = 0;i < properties.length;i++){
+//            res+=(properties[i]-p.getProperties()[i])*(properties[i]-p.getProperties()[i]);
+//        }
 
-        LAB lab1 = new LAB(50,(prop[3]*256.0/2.5)-128,(prop[2]*256.0/7.0)-128);
-        LAB lab2 = new LAB(50,(prop2[3]*256.0/2.5)-128,(prop2[2]*256.0/7.0)-128);
-        return LAB.ciede2000(lab1,lab2);
+        double[] prop = getProperties();
+        double[] prop2 = p.getProperties();
+
+        try {
+            return DistanceFunctionCalculator.calculateDistance(EuclideanDistanceFunction.class, new DoubleVector.Factory(), prop, prop2);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return Double.MAX_VALUE;
     }
 
     @Override

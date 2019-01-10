@@ -1,6 +1,5 @@
 package Model.Impl.Iris.Factory;
 
-import Model.Abstraction.Core;
 import Model.Abstraction.Factory.CoreFactory;
 import Model.Impl.Iris.IrisCoreImpl;
 
