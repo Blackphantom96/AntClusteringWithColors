@@ -1,14 +1,10 @@
 package Model.Impl.Iris;
 
-import Model.Abstraction.CustomDistanceFunctions.CielabDistanceFunction;
-import Model.Abstraction.Factory.DistanceFunctionFactory;
 import Model.Abstraction.Item;
 import Model.Impl.CoreFactoryCreator;
 import de.lmu.ifi.dbs.elki.data.DoubleVector;
-import de.lmu.ifi.dbs.elki.distance.distancefunction.AbstractNumberVectorDistanceFunction;
 import de.lmu.ifi.dbs.elki.distance.distancefunction.minkowski.EuclideanDistanceFunction;
 import utiles.DistanceFunctionCalculator;
-import utiles.LAB;
 
 import java.util.Random;
 
