@@ -42,7 +42,7 @@ public class Main extends JFrame {
 
 	public Main() {
 		super();
-		setTitle("Ant clustering");
+		setTitle("VisualAnt clustering");
 		setSize(400, 400);
 		getContentPane().setBackground(Color.BLACK);
 		setResizable(false);
@@ -88,7 +88,7 @@ public class Main extends JFrame {
 
 		form.add(new JLabel("Particles:"));
 		form.add(particles);
-		form.add(new JLabel("Colony:"));
+		form.add(new JLabel("VisualGroup:"));
 		form.add(population);
 		form.add(new JLabel("k1(Pick):"));
 		form.add(k1);

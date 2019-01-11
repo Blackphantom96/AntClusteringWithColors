@@ -151,7 +151,7 @@ public class ConsoleMain {
 
 	public static void printMetricFormat(List<Double> values) {
 		int i = 1;
-		System.out.println("Item Metric");
+		System.out.println("VisualItem Metric");
 		for (Double val : values) {
 			System.out.println(i++ + " " + val);
 		}

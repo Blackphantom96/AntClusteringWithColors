@@ -8,7 +8,7 @@ import Model.Abstraction.Item;
 public class ColorCoreImpl implements Core<int[]> {
 
 	private ColorColony population;
-	///private final List<Item<int[]>> particles; // XXX toca mirar Juan: que es eso ¿?
+	///private final List<VisualItem<int[]>> particles; // XXX toca mirar Juan: que es eso ¿?
 	private final double k1;
 	private final double k2;
 	private final int sizeX;

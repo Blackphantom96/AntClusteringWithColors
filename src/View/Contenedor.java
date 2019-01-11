@@ -11,7 +11,7 @@ public class Contenedor extends JFrame{
 	private Drawer drawer ;
 	public Contenedor(int population, int particles, double k1, double k2, int gridX, int gridY, int radio, double alpha, double resX, int cicles) {
 		super();
-		setTitle("Ant Cluster Simulation");
+		setTitle("VisualAnt Cluster Simulation");
 		setSize((int)resX*gridX, (int)resX*gridX);
 		getContentPane().setBackground(Color.white);
 		setResizable(false);
