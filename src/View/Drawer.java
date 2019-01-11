@@ -24,7 +24,7 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 	private VisualIrisColony colony;
 	private VisualIrisItems environment;
 
-	private Timer time = new Timer(1, this);
+	private Timer time = new Timer(0, this);
 	private boolean flagRealColor = true;
 
 	private Random rand;

@@ -2,8 +2,9 @@ package Model.Impl.Iris;
 
 import Model.Abstraction.Item;
 import Model.Impl.CoreFactoryCreator;
+import Model.Impl.CustomDistanceFunctions.CielabDistanceFunction;
 import de.lmu.ifi.dbs.elki.data.DoubleVector;
-import de.lmu.ifi.dbs.elki.distance.distancefunction.minkowski.EuclideanDistanceFunction;
+import de.lmu.ifi.dbs.elki.distance.distancefunction.*;
 import utiles.DistanceFunctionCalculator;
 
 import java.util.Arrays;
@@ -23,7 +24,7 @@ public class IrisItem implements Item<double[]> {
                 rand.nextDouble() * MAX_DEPTH,
                 rand.nextDouble() * MAX_DEPTH,
                 rand.nextDouble() * MAX_DEPTH,
-                "Random"); 
+                "Random");
     }
 
     public IrisItem(double a, double b, double c, double d, String tipo) {
@@ -48,11 +49,12 @@ public class IrisItem implements Item<double[]> {
         double[] prop2 = p.getProperties();
 
         try {
-            return DistanceFunctionCalculator.calculateDistance(EuclideanDistanceFunction.class, new DoubleVector.Factory(), prop, prop2);
+            return DistanceFunctionCalculator.calculateDistance(CanberraDistanceFunction.class, new DoubleVector.Factory(), prop, prop2);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 
+        //TODO: ver funciones https://elki-project.github.io/algorithms/distances de la familia minowski.
         return Double.MAX_VALUE;
     }
 

@@ -9,7 +9,11 @@ import java.util.Map;
 
 public class DistanceFunctionFactory {
 
-	private static Map<Class, AbstractNumberVectorDistanceFunction> cache = new HashMap<>();
+	private DistanceFunctionFactory(){
+
+	}
+
+	private static Map<String, AbstractNumberVectorDistanceFunction> cache = new HashMap<>();
 
 	public static AbstractNumberVectorDistanceFunction getDistanceFunction(Class c) throws Exception {
 		if (c == null || !AbstractNumberVectorDistanceFunction.class.isAssignableFrom(c)) {
@@ -17,8 +21,8 @@ public class DistanceFunctionFactory {
 			return null;
 		}
 
-		if (cache.containsKey(c)) {
-			return cache.get(c);
+		if (cache.containsKey(c.getName())) {
+			return cache.get(c.getName());
 		}
 
 		AbstractNumberVectorDistanceFunction res = null;
@@ -31,14 +35,18 @@ public class DistanceFunctionFactory {
 			res = instantiateDistanceFunction(c);
 		}
 
-		cache.put(c, res);
+		cache.put(c.getName(), res);
 
 		return res;
 	}
 
 	private static AbstractNumberVectorDistanceFunction instantiateDistanceFunction(Class c) throws Exception {
-		Constructor ctor = c.getConstructor();
-		return (AbstractNumberVectorDistanceFunction) ctor.newInstance();
+		try {
+			Constructor ctor = c.getConstructor();
+			return (AbstractNumberVectorDistanceFunction) ctor.newInstance();
+		}catch (Exception e){
+			throw new Exception("Funcion no soportada");
+		}
 	}
 
 }

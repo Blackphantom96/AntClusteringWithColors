@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9cd1b1ba-ea13-4607-84cd-5609a1895264" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Color/ColorCoreImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Color/ColorCoreImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Color/ColorFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Color/ColorFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisAnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisAnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisColony.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisColony.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Abstraction/Factory/DistanceFunctionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Abstraction/Factory/DistanceFunctionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Impl/Iris/IrisItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Drawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisItem.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,20 +18,22 @@
     <session id="-751083813">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="1" />
           <entry key="CSV" value="1" />
-          <entry key="JAVA" value="45" />
+          <entry key="JAVA" value="52" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3436" />
+          <entry key="JAVA" value="3624" />
           <entry key="PLAIN_TEXT" value="31" />
           <entry key="XML" value="1" />
         </counts>
@@ -50,29 +48,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Drawer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="221">
+              <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Impl/Iris/IrisAnt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Impl/Iris/IrisColony.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -80,81 +60,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/Impl/Iris/IrisItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisItems.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+            <state relative-caret-position="203">
+              <caret line="51" column="88" selection-start-line="51" selection-start-column="88" selection-end-line="51" selection-end-column="88" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#621#622#0" expanded="true" />
-                <element signature="e#664#665#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorCoreImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="26" column="122" selection-start-line="26" selection-start-column="122" selection-end-line="26" selection-end-column="122" />
-              <folding>
-                <element signature="e#1368#1369#0" expanded="true" />
-                <element signature="e#1403#1404#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="31" column="112" selection-start-line="31" selection-start-column="112" selection-end-line="31" selection-end-column="112" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data/iris.csv">
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" rowLines="3" />
-          </provider>
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="-654">
-              <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisColony.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-31">
-              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#822#823#0" expanded="true" />
-                <element signature="e#865#866#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,12 +111,13 @@
         <option value="$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisColony.java" />
         <option value="$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisItems.java" />
         <option value="$PROJECT_DIR$/src/data/iris.csv" />
-        <option value="$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisItem.java" />
         <option value="$PROJECT_DIR$/src/Model/Impl/Color/ColorCoreImpl.java" />
         <option value="$PROJECT_DIR$/src/Model/Impl/Color/ColorFunction.java" />
-        <option value="$PROJECT_DIR$/src/View/Drawer.java" />
         <option value="$PROJECT_DIR$/src/Model/Impl/Iris/IrisAnt.java" />
         <option value="$PROJECT_DIR$/src/Model/Impl/Iris/IrisColony.java" />
+        <option value="$PROJECT_DIR$/src/View/Drawer.java" />
+        <option value="$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisItem.java" />
+        <option value="$PROJECT_DIR$/src/Model/Abstraction/Factory/DistanceFunctionFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/Impl/Iris/IrisItem.java" />
       </list>
     </option>
@@ -248,6 +158,42 @@
               <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
               <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Abstraction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+              <item name="CustomDistanceFunctions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+              <item name="Iris" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -262,14 +208,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
               <item name="Entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AntClusteringWithColors" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="Entities" type="462c0819:PsiDirectoryNode" />
-              <item name="Abstract" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AntClusteringWithColors" type="b2602c69:ProjectViewProjectNode" />
@@ -326,12 +264,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547164169328</updated>
-      <workItem from="1547164176695" duration="16454000" />
+      <workItem from="1547164176695" duration="18171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16454000" />
+    <option name="totallyTimeSpent" value="18171000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,7 +291,7 @@
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49903288" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" sideWeight="0.50096714" side_tool="true" weight="0.24964234" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Messages" weight="0.32899868" />
+      <window_info anchor="bottom" id="Messages" weight="0.32769832" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -363,7 +301,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39921975" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32769832" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32769832" />
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="PlantUML" />
       <window_info anchor="right" id="Palette&#9;" />
@@ -527,16 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Impl/Color/ColorCoreImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -555,16 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Drawer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Impl/Iris/IrisAnt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -579,10 +497,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/elki-0.7.1.jar!/de/lmu/ifi/dbs/elki/distance/distancefunction/set/HammingDistanceFunction.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-258">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Drawer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Entities/Iris/VisualIrisItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="17" column="94" lean-forward="true" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Impl/CustomDistanceFunctions/CielabDistanceFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utiles/ClassesScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-164">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utiles/DistanceFunctionCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Abstraction/Factory/DistanceFunctionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="45" column="43" lean-forward="true" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Impl/Iris/IrisItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        <state relative-caret-position="203">
+          <caret line="51" column="88" selection-start-line="51" selection-start-column="88" selection-end-line="51" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
