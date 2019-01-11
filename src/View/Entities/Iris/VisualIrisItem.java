@@ -10,7 +10,9 @@ public class VisualIrisItem extends  Visual {
 
     public VisualIrisItem(Item<double[]> item) {
         super();
-        representationColor = new LAB(50.0,item.getProperties()[0]*item.getProperties()[1],item.getProperties()[2]).toRGB();
+        double [] prop = item.getProperties();
+        LAB tempRealColor = new LAB(50.0,(prop[3]*256.0/2.5)-128.0,(prop[2]*256.0/7.0)-128.0);
+        representationColor = tempRealColor.toRGB();
         realColor = Color.BLUE; //TODO Anzola tiene que implementar el getRealClass
     }
 
