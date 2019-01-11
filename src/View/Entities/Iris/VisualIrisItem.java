@@ -8,12 +8,28 @@ import java.awt.*;
 
 public class VisualIrisItem extends  Visual {
 
+    private static final Color SETOSA = Color.BLUE;
+    private static final Color VERSICOLOR = Color.GREEN;
+    private static final Color VIRGINICA = Color.RED;
+
     public VisualIrisItem(Item<double[]> item) {
         super();
         double [] prop = item.getProperties();
         LAB tempRealColor = new LAB(50.0,(prop[3]*256.0/2.5)-128.0,(prop[2]*256.0/7.0)-128.0);
         representationColor = tempRealColor.toRGB();
-        realColor = Color.BLUE; //TODO Anzola tiene que implementar el getRealClass
+        switch (item.getRealClass()){
+            case "Iris-setosa":
+                realColor = SETOSA;
+                break;
+            case "Iris-versicolor":
+                realColor = VERSICOLOR;
+                break;
+            case "Iris-virginica":
+                realColor = VIRGINICA;
+                break;
+            default:
+                realColor = Color.MAGENTA; // si esto aparece algo anda mal
+        }
     }
 
     @Override

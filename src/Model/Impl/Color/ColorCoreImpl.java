@@ -25,7 +25,6 @@ public class ColorCoreImpl implements Core<int[]> {
 
 
 	public ColorCoreImpl(int population, int particles, double k1, double k2, int sizeX, int sizeY, int r, double alpha) {
-		///this.particles = null; // TODO falta
 		this.k1 = k1;
 		this.k2 = k2;
 		this.sizeX = sizeX;
@@ -59,7 +58,7 @@ public class ColorCoreImpl implements Core<int[]> {
 
 	@Override
 	public Item<int[]>[][] getParticles() {
-		return grid; // TODO terminar
+		return grid;
 	}
 
 	@Override

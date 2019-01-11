@@ -9,9 +9,9 @@ import utiles.DistanceFunctionCalculator;
 import java.util.Arrays;
 import java.util.Random;
 
-public class IrisItem implements Item<double[]> { // TODO: anzola
+public class IrisItem implements Item<double[]> {
 
-    private static final double MAX_DEPTH = 10.0; // TODO: revisar
+    private static final double MAX_DEPTH = 10.0;
 
     private int posX, posY;
     private static Random rand = new Random();
@@ -23,7 +23,7 @@ public class IrisItem implements Item<double[]> { // TODO: anzola
                 rand.nextDouble() * MAX_DEPTH,
                 rand.nextDouble() * MAX_DEPTH,
                 rand.nextDouble() * MAX_DEPTH,
-                "Random"); // TODO revisar
+                "Random"); 
     }
 
     public IrisItem(double a, double b, double c, double d, String tipo) {

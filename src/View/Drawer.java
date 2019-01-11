@@ -29,12 +29,6 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 
 	private Random rand;
 
-	//TODO REMOVE THIS!!!!!!!!!
-	private static final Color SETOSA = Color.BLUE;
-	private static final Color VERSICOLOR = Color.GREEN;
-	private static final Color VIRGINICA = Color.RED;
-
-
 	public Drawer(int population, int particles, double k1, double k2, int gridX, int gridY, int radio, double alpha,
 			double scale, int cicles) {
 		core = CoreFactoryCreator.getFactory().createInstance(population, particles, k1, k2, gridX,
@@ -75,12 +69,12 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+
 	}
 
 	@Override

@@ -6,7 +6,7 @@ import Model.Impl.CoreFactoryCreator;
 
 import java.util.Random;
 
-public class IrisAnt implements Ant<double[]> { // TODO: anzola
+public class IrisAnt implements Ant<double[]> {
 
     private Random rand = new Random();
     private int posX, posY;
@@ -30,7 +30,7 @@ public class IrisAnt implements Ant<double[]> { // TODO: anzola
     }
 
     @Override
-    public int[] move() { // TODO: revisar
+    public int[] move() {
         int velX = rand.nextInt(3) - 1;
         int velY = rand.nextInt(3) - 1;
         while ((posX + velX) < 0 || (posX + velX) >= maxX)

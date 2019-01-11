@@ -29,7 +29,7 @@ public class ColorFunction implements Function<int[]> {
 
 	@Override
 	public double itemAverageSimilarity(int x, int y, int r, Item<int[]> p) { // Eq 5.13 o mirar Eq 5.16 en caso de
-																					// // querer meter velocidad //FIXME
+																					// // querer meter velocidad
 																					// mirar que esta pasando poque esta
 																					// dando 0
 		int maxX = CoreFactoryCreator.getFactory().getInstance().getMaxX();
