@@ -6,6 +6,7 @@ import de.lmu.ifi.dbs.elki.data.DoubleVector;
 import de.lmu.ifi.dbs.elki.distance.distancefunction.minkowski.EuclideanDistanceFunction;
 import utiles.DistanceFunctionCalculator;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class IrisItem implements Item<double[]> { // TODO: anzola
@@ -16,7 +17,6 @@ public class IrisItem implements Item<double[]> { // TODO: anzola
     private static Random rand = new Random();
     private double[] properties;
     private String tipo;
-
 
     public IrisItem() {
         this(   rand.nextDouble() * MAX_DEPTH,
@@ -33,6 +33,7 @@ public class IrisItem implements Item<double[]> { // TODO: anzola
         posY = rand.nextInt(maxY);
         properties = new double[]{a, b, c, d};
         this.tipo = tipo;
+
     }
 
 
@@ -43,11 +44,6 @@ public class IrisItem implements Item<double[]> { // TODO: anzola
 
     @Override
     public double distance(Item<double[]> p) {
-//        double res = 0.0;
-//        for(int i = 0;i < properties.length;i++){
-//            res+=(properties[i]-p.getProperties()[i])*(properties[i]-p.getProperties()[i]);
-//        }
-
         double[] prop = getProperties();
         double[] prop2 = p.getProperties();
 
@@ -71,7 +67,17 @@ public class IrisItem implements Item<double[]> { // TODO: anzola
     }
 
     @Override
-    public String toString() {
+    public String getRealClass() {
         return tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "IrisItem{" +
+                "posX=" + posX +
+                ", posY=" + posY +
+                ", properties=" + Arrays.toString(properties) +
+                ", tipo='" + tipo + '\'' +
+                '}';
     }
 }

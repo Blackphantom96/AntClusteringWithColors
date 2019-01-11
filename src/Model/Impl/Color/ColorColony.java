@@ -1,6 +1,6 @@
 package Model.Impl.Color;
 
-import Model.Abstraction.*;
+import Model.Abstraction.Colony;
 
 public class ColorColony extends Colony<int[]> {
 	public ColorColony(int population) throws Exception {

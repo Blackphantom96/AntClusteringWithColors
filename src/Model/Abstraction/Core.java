@@ -1,28 +1,29 @@
 package Model.Abstraction;
 
 public interface Core<E> {
-	public int getMaxX();
+	int getMaxX();
 
-	public int getMaxY();
+	int getMaxY();
 
-	public Colony<E> getPopulation();
+	Colony<E> getPopulation();
 
-	public Item<E>[][] getParticles();
+	Item<E>[][] getParticles();
 
-	public double getK1();
+	double getK1();
 
-	public double getK2();
+	double getK2();
 
-	public int getRadio();
+	int getRadio();
 	
-	public int getPopulationSize();
+	int getPopulationSize();
 	
-	public int getParticleSize();
+	int getParticleSize();
 	
-	public void generateParticleMatrix();
+	void generateParticleMatrix();
 	
-	public double getAlpha();
+	double getAlpha();
 	
-	public void createPopulation();
-	
+	void createPopulation();
+
+	void iterate();
 }

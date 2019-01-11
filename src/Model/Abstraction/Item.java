@@ -10,4 +10,6 @@ public interface Item<E> {
 	int getPosY();
 	
 	String toString();
+
+	String getRealClass();
 }

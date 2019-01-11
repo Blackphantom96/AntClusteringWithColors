@@ -1,9 +1,10 @@
 package Model.Impl.Color;
 
-import java.util.*;
-
-import Model.Abstraction.*;
+import Model.Abstraction.Ant;
+import Model.Abstraction.Item;
 import Model.Impl.CoreFactoryCreator;
+
+import java.util.Random;
 
 public class ColorAnt implements Ant<int[]> {
 

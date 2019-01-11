@@ -1,11 +1,7 @@
 package View;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 public class Contenedor extends JFrame{
 	private Drawer drawer ;

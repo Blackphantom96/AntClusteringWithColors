@@ -1,6 +1,6 @@
 package Model.Impl.Color.Factory;
 
-import Model.Abstraction.Factory.*;
+import Model.Abstraction.Factory.CoreFactory;
 import Model.Impl.Color.ColorCoreImpl;
 
 public class ColorCoreImplFactory implements CoreFactory {

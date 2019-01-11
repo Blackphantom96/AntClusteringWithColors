@@ -2,6 +2,7 @@ package Model.Impl.Iris;
 
 import Model.Abstraction.Colony;
 import Model.Abstraction.Core;
+import Model.Abstraction.Function;
 import Model.Abstraction.Item;
 
 import java.io.BufferedReader;
@@ -23,6 +24,7 @@ public class IrisCoreImpl implements Core<double[]> {
     private final double alpha;
     private Random rand = new Random();
     private Item<double[]>[][] grid;
+    private Function functions = new IrisFunction();
 
 
     public IrisCoreImpl(int population, int particles, double k1, double k2, int sizeX, int sizeY, int r, double alpha) {
@@ -116,6 +118,33 @@ public class IrisCoreImpl implements Core<double[]> {
             population = new IrisColony(populationSize);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void iterate() {
+        for (int i = 0; i < sizeX; i++) {
+            for (int j = 0; j < sizeY; j++) {
+                IrisAnt tempAgent = (IrisAnt) this.getPopulation().getAnts()[i][j];
+                IrisItem tempParticle = (IrisItem) this.getParticles()[i][j];
+                if (tempAgent != null) {
+                    if (!tempAgent.hasPayload() && tempParticle != null) {
+                        int pp = functions.probPick(i, j, tempParticle);
+                        if (rand.nextInt(100) + 1 < pp) {
+                            tempAgent.setItem(tempParticle);
+                            this.getParticles()[i][j] = null;
+                        }
+                    } else if (tempAgent.hasPayload() && tempParticle == null) {
+                        int pd = functions.probDeposit(i, j, tempAgent.getItem());
+                        // System.out.println(pd);
+                        if (rand.nextInt(100) + 1 < pd) {
+                            this.getParticles()[i][j] = tempAgent.getItem();
+                            tempAgent.setItem(null);
+                        }
+                    }
+                }
+                this.getPopulation().move(i, j);
+            }
         }
     }
 }

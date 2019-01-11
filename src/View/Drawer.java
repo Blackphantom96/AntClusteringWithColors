@@ -1,24 +1,18 @@
 package View;
 
+import Model.Abstraction.Core;
+import Model.Impl.CoreFactoryCreator;
+import Model.Impl.Iris.IrisItem;
+import View.Entities.Iris.VisualIrisColony;
+import View.Entities.Iris.VisualIrisItems;
+
+import javax.swing.*;
 import java.awt.*;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Random;
-
-import javax.swing.JPanel;
-import javax.swing.Timer;
-
-import Model.Abstraction.Core;
-import Model.Abstraction.Function;
-import Model.Impl.CoreFactoryCreator;
-import Model.Impl.Iris.IrisAnt;
-import Model.Impl.Iris.IrisFunction;
-import Model.Impl.Iris.IrisItem;
-import View.Entities.Iris.VisualIrisColony;
-import View.Entities.Iris.VisualIrisItems;
 
 public class Drawer extends JPanel implements KeyListener, ActionListener {
 
@@ -33,7 +27,6 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 	private Timer time = new Timer(1, this);
 	private boolean flagRealColor = true;
 
-	private Function functions = new IrisFunction();
 	private Random rand;
 
 	//TODO REMOVE THIS!!!!!!!!!
@@ -105,30 +98,8 @@ public class Drawer extends JPanel implements KeyListener, ActionListener {
 		if (cicles != 0)
 			repaint();
 
-		//TODO pasar esto al core!
-		for (int i = 0; i < maxX; i++) {
-			for (int j = 0; j < maxY; j++) {
-				IrisAnt tempAgent = (IrisAnt) core.getPopulation().getAnts()[i][j];
-				IrisItem tempParticle = (IrisItem) core.getParticles()[i][j];
-				if (tempAgent != null) {
-					if (!tempAgent.hasPayload() && tempParticle != null) {
-						int pp = functions.probPick(i, j, tempParticle);
-						if (rand.nextInt(100) + 1 < pp) {
-							tempAgent.setItem(tempParticle);
-							core.getParticles()[i][j] = null;
-						}
-					} else if (tempAgent.hasPayload() && tempParticle == null) {
-						int pd = functions.probDeposit(i, j, tempAgent.getItem());
-						// System.out.println(pd);
-						if (rand.nextInt(100) + 1 < pd) {
-							core.getParticles()[i][j] = tempAgent.getItem();
-							tempAgent.setItem(null);
-						}
-					}
-				}
-				core.getPopulation().move(i, j);
-			}
-		}
+		core.iterate();
+
 		cicles--;
 	}
 }

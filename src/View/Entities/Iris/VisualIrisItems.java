@@ -1,7 +1,5 @@
 package View.Entities.Iris;
 
-import Model.Abstraction.Ant;
-import Model.Abstraction.Item;
 import Model.Impl.Iris.IrisItem;
 import View.Entities.Abstract.Visual;
 import View.Entities.Abstract.VisualGroup;

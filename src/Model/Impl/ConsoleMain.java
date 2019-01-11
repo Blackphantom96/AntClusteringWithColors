@@ -1,11 +1,14 @@
 package Model.Impl;
 
-import java.util.*;
-
 import Model.Abstraction.Ant;
 import Model.Abstraction.Core;
 import Model.Abstraction.Item;
-import Model.Impl.Color.*;
+import Model.Impl.Color.ColorAnt;
+import Model.Impl.Color.ColorCoreImpl;
+import Model.Impl.Color.ColorFunction;
+import Model.Impl.Color.ColorItem;
+
+import java.util.*;
 
 public class ConsoleMain {
 	public static void printHelp() {
