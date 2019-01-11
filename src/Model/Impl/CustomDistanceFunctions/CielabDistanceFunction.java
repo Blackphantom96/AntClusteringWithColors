@@ -1,4 +1,4 @@
-package Model.Abstraction.CustomDistanceFunctions;
+package Model.Impl.CustomDistanceFunctions;
 
 import de.lmu.ifi.dbs.elki.data.NumberVector;
 import de.lmu.ifi.dbs.elki.distance.distancefunction.AbstractNumberVectorDistanceFunction;
